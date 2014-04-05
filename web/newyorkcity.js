@@ -162,46 +162,69 @@ function drawBarGraph(dataset){
 	for (sector in bySector){
 //		console.log(bySector[sector])
 		if(bySector[sector]["Certified"]== null){
-			var cSize = 0
+			var cCount = 0
 		}else{ 
-			cSize = bySector[sector]["Certified"].length
+			cCount = bySector[sector]["Certified"].length
 		}
 		if(bySector[sector]["Withdrawn"]== null){
-			var wSize = 0
+			var wCount = 0
 		}else{ 
-			wSize = bySector[sector]["Withdrawn"].length
+			wCount = bySector[sector]["Withdrawn"].length
 		}
 		if(bySector[sector]["Denied"]== null){
-			var dSize = 0
+			var dCount = 0
 		}else{ 
-			dSize = bySector[sector]["Denied"].length
+			dCount = bySector[sector]["Denied"].length
 		}
+		sectorStats.push([sector, cCount,wCount,dCount])
 
-		sectorStats[sector]=[]
-		sectorStats[sector].push(cSize)
-		sectorStats[sector].push(wSize)
-		sectorStats[sector].push(dSize)
 	}
 	
 	console.log(sectorStats)
 	var w = 400;
 	var h = 600;
-//	console.log("draw bar")
+	
 	var svg = d3.select("body")
 		.append("svg:svg")
 		.attr("width", w)
-		.attr("height", h);
-	svg.selectAll("rect")
-		.data(sectorStats["IT"])
-		.enter()
-		.append("rect")
-		.attr("x", function(d,i){return i*20})
-		.attr("y", 0)
-		.attr("width", 20)
-		.attr("height", function(d,i){
-			return d/2
+		.attr("height", h)
+		.append("svg:g")
+		.attr("transform", "translate(0,500)");
+//	console.log("draw bar")
+	p = [20, 50, 30, 20],
+    x = d3.scale.ordinal().rangeRoundBands([0, w - p[1] - p[3]]),
+    y = d3.scale.linear().range([0, h-50]),
+    z = d3.scale.ordinal().range(["lightpink", "darkgray", "lightblue"])
+		
+	var remapped = ["c", "w", "d"].map(function(dat,i){
+		return sectorStats.map(function(d, ii){
+			return {x:ii, y: d[i+1]}
 		})
-		.attr("fill", function(d,i){d3.rgb(i*30,0,0)});
+	})
+	console.log("mapped: ",remapped)
+	
+	var stacked = d3.layout.stack()(remapped)
+	console.log("stacked: ", stacked)
+	
+	x.domain(stacked[0].map(function(d) { return d.x; }));
+	y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
+	console.log("x.domain(): " + x.domain())
+	console.log("y.domain(): " + y.domain())
+           
+	var valgroup = svg.selectAll("g.valgroup")
+	            .data(stacked)
+	            .enter().append("svg:g")
+	            .attr("class", "valgroup")
+	            .style("fill", function(d, i) { return z(i); })
+	            .style("stroke", function(d, i) { return d3.rgb(z(i)).darker(); });
+				
+	var rect = valgroup.selectAll("rect")
+	            .data(function(d){return d;})
+	            .enter().append("svg:rect")
+	            .attr("x", function(d) { return x(d.x); })
+	            .attr("y", function(d) { return -y(d.y0) - y(d.y); })
+	            .attr("height", function(d) { return y(d.y); })
+	            .attr("width", x.rangeBand());
 };
 
 
