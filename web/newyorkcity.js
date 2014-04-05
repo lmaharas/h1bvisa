@@ -47,15 +47,16 @@ function aggregateApplicationsByCountry(country){
 	for (visa in visasByCountry){
 		//console.log(visasByCountry[visa]["Economic Sector"])
 		var currentSector = visasByCountry[visa]["Economic Sector"];
-		countryBySector[currentSector].push(visasByCountry[visa])
+		var currentStatus = visasByCountry[visa]["Status"];
+		if(countryBySector[currentSector][currentStatus]==undefined){
+			console.log("undefined")
+			countryBySector[currentSector][currentStatus]=[]
+			countryBySector[currentSector][currentStatus].push(visasByCountry[visa])
+		}else{
+			countryBySector[currentSector][currentStatus].push(visasByCountry[visa])
+		}
 	}
-	//console.log(countryBySector)
-	
-	var sectorByStatus = {
-		"Denied":[],
-		"Withdrawn":[],
-		"Certified":[]
-	}
+	console.log(countryBySector)
 }
 
 function drawBarGraph(){
