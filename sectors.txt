@@ -1,0 +1,40 @@
+'': 3227
+'Agribusiness': 296
+'Transportation': 274
+'Finance': 2735
+'Geospatial': 50
+'Educational Services': 2640
+'Automotive': 380
+'Energy': 338
+'IT': 17362
+'Homeland Security': 20
+'Health Care': 2105
+'Construction': 425
+'Aerospace': 1255
+'Biotechnology': 137
+'Hospitality': 672
+'Retail': 1374
+'Other Economic Sector': 4835
+'Advanced Mfg': 6027
+'us_economic_sector': 1
+
+
+'': 677
+ 'Agribusiness': 113
+ 'Transportation': 191
+ 'Finance': 1522
+ 'Geospatial': 19
+ 'Educational Services': 1608
+ 'Automotive': 199
+ 'Energy': 201
+ 'IT': 7063
+ 'Homeland Security': 9
+ 'Health Care': 1334
+ 'Construction': 351
+ 'Aerospace': 650
+ 'Biotechnology': 66
+ 'Hospitality': 476
+ 'Retail': 607
+ 'Other Economic Sector': 2865
+ 'Advanced Mfg': 2707
+ 'us_economic_sector': 1
