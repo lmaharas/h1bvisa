@@ -181,50 +181,90 @@ function drawBarGraph(dataset){
 	}
 	
 	console.log(sectorStats)
-	var w = 400;
-	var h = 600;
+	var w = 500;
+	var h = 500;
 	
 	var svg = d3.select("body")
 		.append("svg:svg")
 		.attr("width", w)
 		.attr("height", h)
 		.append("svg:g")
-		.attr("transform", "translate(0,500)");
+		//.attr("transform", "translate(0,400)")
+		.attr("transform", "rotate(90 0 0)");
+	var svg2 = d3.select("body")
+		.append("svg:svg")
+		.attr("width", 120)
+		.attr("height", h)
+		.append("svg:g");
 //	console.log("draw bar")
-	p = [20, 50, 30, 20],
-    x = d3.scale.ordinal().rangeRoundBands([0, w - p[1] - p[3]]),
-    y = d3.scale.linear().range([0, h-50]),
-    z = d3.scale.ordinal().range(["lightpink", "darkgray", "lightblue"])
+	p = [0, 50, 30, 20],
+    x = d3.scale.ordinal().rangeRoundBands([0, w-20]),
+    y = d3.scale.linear().range([0, h-140]),
+    z = d3.scale.ordinal().range(["#59D984","#EDA52B","#E63D25",])
 		
 	var remapped = ["c", "w", "d"].map(function(dat,i){
 		return sectorStats.map(function(d, ii){
 			return {x:ii, y: d[i+1]}
 		})
 	})
-	console.log("mapped: ",remapped)
+	//console.log("mapped: ",remapped)
 	
 	var stacked = d3.layout.stack()(remapped)
-	console.log("stacked: ", stacked)
+	//console.log("stacked: ", stacked)
 	
 	x.domain(stacked[0].map(function(d) { return d.x; }));
 	y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
-	console.log("x.domain(): " + x.domain())
-	console.log("y.domain(): " + y.domain())
+	//console.log("x.domain(): " + x.domain())
+	//console.log("y.domain(): " + y.domain())
            
 	var valgroup = svg.selectAll("g.valgroup")
 	            .data(stacked)
-	            .enter().append("svg:g")
+	            .enter()
+				.append("svg:g")
 	            .attr("class", "valgroup")
-	            .style("fill", function(d, i) { return z(i); })
-	            .style("stroke", function(d, i) { return d3.rgb(z(i)).darker(); });
+	            .style("fill", function(d, i) { return z(i); });
 				
 	var rect = valgroup.selectAll("rect")
 	            .data(function(d){return d;})
-	            .enter().append("svg:rect")
+	            .enter()
+				.append("svg:rect")
 	            .attr("x", function(d) { return x(d.x); })
-	            .attr("y", function(d) { return -y(d.y0) - y(d.y); })
+	            .attr("y", function(d) { return -y(d.y0) - y(d.y)-120; })
 	            .attr("height", function(d) { return y(d.y); })
-	            .attr("width", x.rangeBand());
+	            .attr("width", x.rangeBand()-2)
+				.attr("opacity", 0.6)
+				.on('mouseover', function(d,i){
+					d3.selectAll('#barHighlight')
+						.html(sectorStats[i][0]+" - Certified:"+ sectorStats[i][1]+" Withdrawn: "+sectorStats[i][2]+" Denied: "+sectorStats[i][3]);
+					d3.select(this).attr("opacity", 1);
+				})
+				.on('mouseout', function(d){
+					d3.select(this).attr("opacity", .6);
+					d3.selectAll('#barHighlight').html('');
+				});
+				
+	svg2.selectAll("text")
+	.data(sectorStats)
+	.enter()
+	.append("svg:g")
+	.attr("class", "barLabel")
+	.append("text")
+	.text(function(d){console.log(d[0]);return d[0]})
+	.attr("font-size", "10px")
+	.attr("text-anchor", "end")
+	.attr("x", function(d,i){
+		return 112;
+	})
+	.attr("y", function(d,i){ 
+		return 22+i*(w/sectorStats.length-2)
+	})
+	.on('mouseover', function(d,i){
+		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
+		d3.selectAll('#barHighlight')
+			.html(sectorStats[i][0]+" Total:"+ total);
+		d3.select(this).attr("opacity", 1);
+	})
+	;
 };
 
 
