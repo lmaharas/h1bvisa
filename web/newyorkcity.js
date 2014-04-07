@@ -1,3 +1,19 @@
+var visas = []
+d3.csv("/reduced_data/h1b_newyork.csv", function(data)
+	{
+	//	console.log(data);
+		for(visa in data){
+			visas.push(data[visa]);
+		}
+		//aggregateByCountry("CANADA")
+		//aggregateBySectorAndStatus("Retail", "Denied")
+		//aggregatebySectorThenStatus();
+		drawBarGraph(data)
+		console.log(visas)
+		return visas
+		
+	}
+)
 
 function aggregateByCountry(country){
 	//function that organize selected country's visas by sector, then status
@@ -47,7 +63,7 @@ function aggregateByCountry(country){
 
 function aggregateBySectorAndStatus(Sector, Status){
 	//function that organizes selected sector and status by country
-	console.log("sector status")
+	console.log("sector/status")
 	var visasTargetSectorStatus = []
 	for (visa in visas){		
 		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
@@ -67,8 +83,8 @@ function aggregateBySectorAndStatus(Sector, Status){
 		}
 	}	
 	console.log(visasBySectorStatus)
+	return visasBySectorStatus
 }
-
 
 function aggregatebySectorThenStatus(){
 	//function that organizes by each sector and then by each status
@@ -105,24 +121,37 @@ function aggregatebySectorThenStatus(){
 			bySector[currentSector][currentStatus].push(visas[visa])
 		}
 	}
-	console.log(bySector)
+	//console.log(bySector)
 	return(bySector)
 	
 }
 
-d3.csv("/reduced_data/h1b_newyork.csv", function(data)
-	{
-		visas = [];
-	//	console.log(data);
-		for(visa in data){
-			visas.push(data[visa]);
+function aggregateBySector(Sector){
+	//function that organizes selected sector and status by country
+	console.log("sector")
+	var visasTargetSector = []
+	for (visa in visas){		
+		if (visas[visa]["Economic Sector"] == Sector){
+			visasTargetSector.push(visas[visa])
 		}
-		//aggregateByCountry("CANADA")
-		//aggregateBySectorAndStatus("Retail", "Denied")
-		//aggregatebySectorThenStatus();
-		drawBarGraph(data)
 	}
-)
+	console.log("hightlighted visas: ", visasTargetSector)
+	var visasBySector = {}
+	for (visa in visasTargetSector){	
+		var currentCountry = visasTargetSector[visa]["Origin Country"];
+		if(visasBySector[currentCountry]==undefined){
+			visasBySector[currentCountry]=[]
+			visasBySector[currentCountry].push(visasTargetSector[visa])
+		}
+		else{
+			visasBySector[currentCountry].push(visasTargetSector[visa])
+		}
+	}	
+	console.log(visasBySector)
+	return visasBySector
+}
+
+
 
 function drawBarGraph(dataset){
 	var bySector = 
@@ -181,13 +210,13 @@ function drawBarGraph(dataset){
 	}
 	
 	console.log(sectorStats)
-	var w = 500;
-	var h = 500;
+	var w = 400;
+	var h = 400;
 	
 	var svg = d3.select("body")
 		.append("svg:svg")
-		.attr("width", w)
-		.attr("height", h)
+		.attr("width", h)
+		.attr("height", w)
 		.append("svg:g")
 		//.attr("transform", "translate(0,400)")
 		.attr("transform", "rotate(90 0 0)");
@@ -231,16 +260,28 @@ function drawBarGraph(dataset){
 	            .attr("x", function(d) { return x(d.x); })
 	            .attr("y", function(d) { return -y(d.y0) - y(d.y)-120; })
 	            .attr("height", function(d) { return y(d.y); })
-	            .attr("width", x.rangeBand()-2)
+	            .attr("width", x.rangeBand()-1)
 				.attr("opacity", 0.6)
 				.on('mouseover', function(d,i){
+					var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
+					var percentC = parseInt(sectorStats[i][1]/total*100)
+					var percentW = parseInt(sectorStats[i][2]/total*100)
+					var percentD = parseInt(sectorStats[i][3]/total*100)
 					d3.selectAll('#barHighlight')
-						.html(sectorStats[i][0]+" - Certified:"+ sectorStats[i][1]+" Withdrawn: "+sectorStats[i][2]+" Denied: "+sectorStats[i][3]);
+						.html(sectorStats[i][0]+" - Certified: "+ sectorStats[i][1]+"("+percentC +"%), Withdrawn: "+sectorStats[i][2]+"("+percentW +"%), Denied: "+sectorStats[i][3]+"("+percentD +"%)");
 					d3.select(this).attr("opacity", 1);
 				})
 				.on('mouseout', function(d){
 					d3.select(this).attr("opacity", .6);
 					d3.selectAll('#barHighlight').html('');
+				})
+				.on("click", function(d,i){
+					var currentSector = sectorStats[i][0]
+					//TODO: find clicked on column, and pass into function for filtering
+					//var Status = d3.select(this).property(i)
+					var Status = "Denied"
+					var selectedDetails = aggregateBySectorAndStatus(currentSector, Status)
+					d3.selectAll('#visaDetails').html(selectedDetails)
 				});
 				
 	svg2.selectAll("text")
@@ -260,13 +301,18 @@ function drawBarGraph(dataset){
 	})
 	.on('mouseover', function(d,i){
 		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
+		var totalPercent = parseInt(total/2340*100)
 		d3.selectAll('#barHighlight')
-			.html(sectorStats[i][0]+" Total:"+ total);
+			.html(sectorStats[i][0]+"- "+ total + " visas, or "+totalPercent+"% of all visas");
 		d3.select(this).attr("opacity", 1);
 	})
-	;
+	.on("click", function(d,i){
+		var currentSector = sectorStats[i][0]
+		var selectedDetails = aggregateBySector(currentSector)
+		//console.log("selected details: ", selectedDetails)
+		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails))
+	})
 };
-
 
 function drawMap() {
 	//console.log("drawMap function")

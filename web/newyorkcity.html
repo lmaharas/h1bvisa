@@ -6,7 +6,9 @@
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
+	<script src="https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.js" type="text/javascript" charset="utf-8"></script>
 	<link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+	
 	<style type="text/css">
 	#barchart{
 
@@ -27,6 +29,10 @@
 		position:absolute;
 		top:130px;
 	}
+	#visaDetails{
+		position:absolute;
+		top:540px;
+	}
 	svg, svg2{
 		position:absolute;
 		top:150px;
@@ -37,8 +43,10 @@
 
 <body>
 <div id = "title">New York City</div>
-<div id = "subtitle">This map visualizes 1405 H1B visa applications in New York City in 2013</div>
+<div id = "subtitle">This map visualizes 2340 H1B visa applications in New York City in 2013</div>
 <div id = "barHighlight"></div>
+<div id = "visaDetails"></div>
+
 <div id="barchart"></div>
 <div id="map"></div>
 
