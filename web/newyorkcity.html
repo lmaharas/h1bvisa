@@ -38,8 +38,8 @@
 	}
 	#visaDetails{
 		position:absolute;
-		top:540px;
-		font-size:10px;
+		top:560px;
+		font-size:12px;
 	}
 	svg, svg2{
 		position:absolute;
@@ -55,6 +55,12 @@
 		left:20px;
 		top:20px;
 	}
+	#countryLabel{
+		position:absolute;
+		top:500px;
+		left:400px;
+		width:500px;
+	}
 	</style>
 </head>
 
@@ -62,13 +68,15 @@
 <body>
 <div id = "header">
 <div id = "title">New York City</div>
-<div id = "subtitle">This map visualizes 2340 H1B visa applications in New York City in 2013</div>
+<div id = "subtitle">This map visualizes 2340 H1B visa applications in New York City in 2013 ... more</div>
 </div>
 <div id = "visaDetails"></div>
 
 <div class="barchart"><div id = "barHighlight"></div>
 </div>
-<div class="map"></div>
+<div class="map">
+	<div id = "countryLabel"></div>
+</div>
 
 <script src="newyorkcity.js"></script>
 

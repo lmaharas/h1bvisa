@@ -3,11 +3,11 @@ Automotive,Certified,11101,BY MARVIC TRANSMISSION AUTO REPAIR; CORP,Helpers--Ins
 Other Economic Sector,Certified,11432,PICKWICK SCHOOL,Preschool Teachers; Except Special Education,PHILIPPINES
 Hospitality,Certified,10024,GOOD ENOUGH TO EAT UPTOWN; LTD.,Bakers; Bread and Pastry,MEXICO
 Other Economic Sector,Certified,11213,CHABAD LUBAVITCH CENTER,Interpreters and Translators,GERMANY
-undefined,Certified,10029,EL PASO,Food Preparation Workers,MEXICO
+Not Available,Certified,10029,EL PASO,Food Preparation Workers,MEXICO
 IT,Certified,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 IT,Certified,10016,MPHASIS CORPORATION,Management Analysts,INDIA
-undefined,Certified,11206,MELISSAS BRIDAL SHOP,Retail Salespersons,ECUADOR
-undefined,Certified,10309,A RICHMOND; INC,Cooks; Short Order,MEXICO
+Not Available,Certified,11206,MELISSAS BRIDAL SHOP,Retail Salespersons,ECUADOR
+Not Available,Certified,10309,A RICHMOND; INC,Cooks; Short Order,MEXICO
 Automotive,Certified,11101,ALL LOCK & GLASS SERVICES INC,Retail Salespersons,ECUADOR
 Hospitality,Certified,10021,MESKOURIS BROS; INC,Cooks; Short Order,MEXICO
 Finance,Certified,10005,NYSE MARKET INC,Computer Software Engineers; Applications,INDIA
@@ -15,9 +15,9 @@ Advanced Mfg,Certified,11206,QUALITY STRAPPING; INC.,Extruding and Drawing Machi
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Financial Analysts,TAIWAN
 Construction,Certified,10305,W.T. BUILDERS,Woodworkers; All Other,POLAND
 Construction,Certified,11372,MILLER GENERAL CONTRACTING LIMITED,Carpenters,MEXICO
-undefined,Certified,10004,GOLDMAN; SACHS & CO.,Computer Systems Analysts,INDIA
+Not Available,Certified,10004,GOLDMAN; SACHS & CO.,Computer Systems Analysts,INDIA
 Finance,Certified,10282,GOLDMAN;SACHS & CO.,Financial Analysts,INDIA
-undefined,Certified,10282,GOLDMAN;SACHS & CO.,Financial Analysts,ISRAEL
+Not Available,Certified,10282,GOLDMAN;SACHS & CO.,Financial Analysts,ISRAEL
 Construction,Certified,10302,MARGARELLA INDUSTRIALCONSTRUCTION; CORP,Cement Masons and Concrete Finishers,MEXICO
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,JORDAN
 Educational Services,Certified,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,CANADA
@@ -37,7 +37,7 @@ Hospitality,Certified,10036,326 RESTAURANT CORP. D/B/A JOE ALLEN RESTAURANT,Cook
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Network and Computer Systems Administrators,INDIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Network and Computer Systems Administrators*,INDIA
 Finance,Certified,10167,SOCIETE GENERALE,Financial Analysts,FRANCE
-undefined,Denied,11414,RUSSOS ON THE BAY,Chefs and Head Cooks,MEXICO
+Not Available,Denied,11414,RUSSOS ON THE BAY,Chefs and Head Cooks,MEXICO
 IT,Certified,11001,ADVANCED DATA SYSTEMS,Computer Systems Analysts,INDIA
 Finance,Certified,10167,SG AMERICAS SECURITIES; LLC,Financial Analysts,FRANCE
 Finance,Certified,10167,SG AMERICAS SECURITIES; LLC,Financial Managers,FRANCE
@@ -124,7 +124,7 @@ Other Economic Sector,Certified,10018,MITCHELL/MARTIN INC,Computer Software Engi
 Construction,Certified,11385,MCCONSTRUCTION CONSULTING INC,Cabinetmakers and Bench Carpenters,POLAND
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Database Administrators,INDIA
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Computer Software Engineers; Systems Software,VIETNAM
-undefined,Denied,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
+Not Available,Denied,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 Hospitality,Certified,10001,PINE TREE HOUSE INC. DBA KANG SUH RESTAURANT,Bookkeeping; Accounting; and Auditing Clerks,SOUTH KOREA
 IT,Certified,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Finance,Certified,10018,HSBC SECURITIES (USA) INC.,Financial Analysts,VENEZUELA
@@ -186,12 +186,12 @@ Hospitality,Certified,11206,A.K. NASARY CORP. DBA DUNKIN DONUTS,Food Service Man
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 Finance,Certified,10018,ANCHIN; BLOCK & ANCHIN; LLP,Accountants and Auditors,PHILIPPINES
-undefined,Denied,10013,PAESANO RESTAURANT CORP. D/B/A PAESANO OF MULBERRY STREET,Cooks; Restaurant,MEXICO
+Not Available,Denied,10013,PAESANO RESTAURANT CORP. D/B/A PAESANO OF MULBERRY STREET,Cooks; Restaurant,MEXICO
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,INDIA
 IT,Certified,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Finance,Certified,10018,ANCHIN; BLOCK & ANCHIN; LLP,Accountants and Auditors,PHILIPPINES
-undefined,Denied,10016,THE SPICE MERCHANTS RESTAURANT CORP./DBA INDIAN TANPURA,Chefs and Head Cooks,BANGLADESH
+Not Available,Denied,10016,THE SPICE MERCHANTS RESTAURANT CORP./DBA INDIAN TANPURA,Chefs and Head Cooks,BANGLADESH
 Other Economic Sector,Certified,11223,UNIVERSAL FOUNDATION,Directors; Religious Activities and Education,TURKEY
 Other Economic Sector,Certified,10018,OUT OF THE BLUE ENTERPRISES LLC,Art Directors,CANADA
 Finance,Certified,11354,P.M.CHIN & CO. CPA,Accountants and Auditors,SOUTH KOREA
@@ -212,7 +212,7 @@ Finance,Certified,10010,CREDIT SUISSE ASSET MANAGEMENT; LLC,Financial Analysts,P
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Software Developers; Systems Software,INDIA
 Other Economic Sector,Certified,10011,WEBMD LLC,Computer and Information Systems Managers,INDIA
 Retail,Certified,10011,PRONTO LLC,Computer and Information Systems Managers,AUSTRALIA
-undefined,Denied,11101,DOS UPHOLSTERY CORP,Helpers--Installation; Maintenance; and Repair Workers,ECUADOR
+Not Available,Denied,11101,DOS UPHOLSTERY CORP,Helpers--Installation; Maintenance; and Repair Workers,ECUADOR
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10016,ZETA INTERACTIVE,Computer and Information Systems Managers,INDIA
 Finance,Certified,10022,BLACKROCK CAPITAL MANAGEMENT; INC.,Software Developers; Applications,UNITED KINGDOM
@@ -222,7 +222,7 @@ Other Economic Sector,Certified,10011,THE NEWSWEEK/DAILY BEAST COMPANY LLC,Publi
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 IT,Certified,11223,ATLAS COMMUNICATIONS TECHNOLOGY INC,Network Systems and Data Communications Analysts,INDIA
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
-undefined,Certified,10016,L-3 APPLIED TECHNOLOGIES; INC.,Electrical Engineers,UNITED KINGDOM
+Not Available,Certified,10016,L-3 APPLIED TECHNOLOGIES; INC.,Electrical Engineers,UNITED KINGDOM
 IT,Certified,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 IT,Certified,10016,MPHASIS CORPORATION,Computer Systems Analysts,INDIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Computer Systems Analysts,INDIA
@@ -286,10 +286,10 @@ Finance,Certified,10020,THE BANK OF TOKYO-MITSUBISHI UFJ; LTD.,Computer Systems 
 Other Economic Sector,Certified,10174,PA CONSULTING GROUP; INC.,Computer Systems Analysts,INDIA
 Automotive,Certified,11435,TEDDYS HILLSIDE SERVICE STATION; INC.,Automotive Service Technicians and Mechanics,GUYANA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Management Analysts,INDIA
-undefined,Denied,10013,ANGELO OF MULBERRY STREET INC.,Cooks; Restaurant,ECUADOR
+Not Available,Denied,10013,ANGELO OF MULBERRY STREET INC.,Cooks; Restaurant,ECUADOR
 Finance,Certified,10006,ENLACE NEW YORK; INC.,Financial Managers,MEXICO
 Other Economic Sector,Certified,10007,DEHENG CHEN CHAN; LLC,Lawyers,CHINA
-undefined,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Human Resources Assistants; Except Payroll and Timekeeping,PHILIPPINES
+Not Available,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Human Resources Assistants; Except Payroll and Timekeeping,PHILIPPINES
 Finance,Certified,10019,R. G. NIEDERHOFFER CAPITAL MANAGEMENT; INC.,Financial Analysts,INDIA
 Other Economic Sector,Certified,10022,MARC PHILLIPS DECORATIVE RUGS,Fabric Menders; Except Garment,IRAN
 Other Economic Sector,Certified,10017,HISAKO 47.INC,Hairdressers; Hairstylists; and Cosmetologists,JAPAN
@@ -323,7 +323,7 @@ IT,Certified,10036,MISYS INTERNATIONAL BANKING SYSTEMS; INC.,Computer Systems An
 Other Economic Sector,Certified,10024,WILLIAM STEIGER AND MARY STEIGER,Maids and Housekeeping Cleaners,PHILIPPINES
 Construction,Certified,11101,NEW YORK CUSTOM INTERIOR MILLWORK CORPORATION,Cabinetmakers and Bench Carpenters,ECUADOR
 Finance,Certified,10004,OPPENHEIMER & CO. INC.,Financial Analysts,GERMANY
-undefined,Denied,10025,MATTHEW TURNER,Cooks; Private Household,BOLIVIA
+Not Available,Denied,10025,MATTHEW TURNER,Cooks; Private Household,BOLIVIA
 Finance,Certified,10022,CITIBANK; N.A,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10119,LIUZZO & ASSOCIATES; P.C.,Lawyers,ITALY
 Other Economic Sector,Certified,10018,MITCHELL/MARTIN INC,Software Developers; Applications,INDIA
@@ -333,14 +333,14 @@ IT,Certified,10012,RIMES TECHNOLOGIES CORPORATION,Marketing Managers,CANADA
 Hospitality,Certified,10016,ARECAT RESTAURAUNT CORP.,Cooks; Restaurant,ITALY
 Finance,Certified,10020,E*TRADE FINANCIAL CORPORATION,Software Developers; Systems Software,INDIA
 Advanced Mfg,Certified,11234,PREZIOSO BROS BAKERY,Bakers,ECUADOR
-undefined,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Other Economic Sector,Certified,11217,DVIR;INC.,Hairdressers; Hairstylists; and Cosmetologists,JAPAN
 IT,Certified,10018,IT & EBUSINESS CONSULTING SERVICES INC.,Computer Systems Analysts,INDIA
 IT,Certified,10006,FIRST DERIVATIVES US; INC.,Software Developers; Systems Software,IRELAND
 IT,Certified,10006,FIRST DERIVATIVES US; INC.,Software Developers; Systems Software,IRELAND
 IT,Certified,10006,FIRST DERIVATIVES US; INC.,Software Developers; Systems Software,IRELAND
 Retail,Certified,10018,LOCCITANE; INC.,Public Relations and Fundraising Managers,GREECE
-undefined,Denied,10038,LEARNING LEADERS; INC.,Teachers and Instructors; All Other,CHINA
+Not Available,Denied,10038,LEARNING LEADERS; INC.,Teachers and Instructors; All Other,CHINA
 Aerospace,Certified,11385,OHMS ELECTRICAL CORP.,Mechanical Engineers,ROMANIA
 Advanced Mfg,Certified,10018,INTERMARKET APPAREL LLC,First-Line Supervisors of Production and Operating Workers,INDIA
 Finance,Certified,10019,ING FINANCIAL SERVICES LLC,Securities; Commodities; and Financial Services Sales Agents,SINGAPORE
@@ -359,17 +359,17 @@ Other Economic Sector,Certified,10011,BARNES&NOBLE.COM,Software Developers; Appl
 Other Economic Sector,Certified,10036,IKE KLIGERMAN BARKLEY ARCHITECTS P.C.,Interior Designers,TAIWAN
 Finance,Certified,10022,CITIGROUP GLOBAL MARKETS INC.,Securities; Commodities; and Financial Services Sales Agents,ISRAEL
 Other Economic Sector,Certified,11366,6 PLEASANT RIDGE LLC,Executive Secretaries and Executive Administrative Assistants,SOUTH KOREA
-undefined,Certified,11101,PERSONAL COMMIUNICATION CENTER,Market Research Analysts and Marketing Specialists*,INDIA
+Not Available,Certified,11101,PERSONAL COMMIUNICATION CENTER,Market Research Analysts and Marketing Specialists*,INDIA
 Finance,Certified,10018,MARKIT,Financial Managers,SINGAPORE
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Software Developers; Applications,INDIA
 Hospitality,Certified,10023,PASHA; INC,Chefs and Head Cooks,TURKEY
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10019,NICOSIA CREATIVE EXPRESSO; LTD.,Graphic Designers,CANADA
-undefined,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10305,ARIEMMAS ITALIAN DELI,Cooks; Restaurant,MEXICO
+Not Available,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10305,ARIEMMAS ITALIAN DELI,Cooks; Restaurant,MEXICO
 IT,Certified,10038,TTI OF NY; INC,Computer Systems Analysts,INDIA
 Finance,Certified,10022,ABG SUNDAL COLLIER; INC.,Financial Analysts,SWEDEN
-undefined,Denied,10111,BOWERY KITCHEN SUPPLY; INC.,Electrical and Electronics Repairers; Commercial and Industrial Equipment,MEXICO
+Not Available,Denied,10111,BOWERY KITCHEN SUPPLY; INC.,Electrical and Electronics Repairers; Commercial and Industrial Equipment,MEXICO
 Educational Services,Certified,10458,FORDHAM UNIVERSITY,Foreign Language and Literature Teachers; Postsecondary,ITALY
 IT,Certified,10010,BLUE WOLF GROUP LLC,Computer Systems Analysts,INDIA
 IT,Certified,10016,ENABLEIT LLC.,Software Developers; Applications,CANADA
@@ -500,7 +500,7 @@ Retail,Certified,10017,AVON PRODUCTS; INC,Network and Computer Systems Administr
 Other Economic Sector,Certified,10038,AMBROSE EMPLOYER GROUP; LLC,Computer Systems Analysts,INDIA
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Information Security Analysts; Web Developers; and Computer Network Architects,INDIA
-undefined,Denied,11432,SAROJ GUPTA; MD,Medical Secretaries,PHILIPPINES
+Not Available,Denied,11432,SAROJ GUPTA; MD,Medical Secretaries,PHILIPPINES
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,SOUTH KOREA
 Other Economic Sector,Certified,10017,CLAIRE ROSENSTEIN,Personal Care Aides,PHILIPPINES
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,INDIA
@@ -554,7 +554,7 @@ Other Economic Sector,Certified,10014,WOLFF OLINS LLC,Marketing Managers,SOUTH A
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,DOMINICA
 Other Economic Sector,Certified,10457,BURNSIDE LAUNDROMAT;INC,Tailors; Dressmakers; and Custom Sewers,SOUTH KOREA
 Other Economic Sector,Certified,10018,BY DESIGN LLC,Budget Analysts,SOUTH KOREA
-undefined,Certified,11218,KINGS READY MIX INC.,Heavy and Tractor-Trailer Truck Drivers,ECUADOR
+Not Available,Certified,11218,KINGS READY MIX INC.,Heavy and Tractor-Trailer Truck Drivers,ECUADOR
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,SOUTH KOREA
 Finance,Certified,10022,ALLEN & COMPANY LLC,Computer Programmers,INDIA
 Other Economic Sector,Certified,11354,HAN MA UM ZEN CENTER OF NEW YORK; INC.,Curators,SOUTH KOREA
@@ -593,7 +593,7 @@ Finance,Certified,10038,INTERACTIVE DATA REAL-TIME SERVICES; INC.,Computer Syste
 Aerospace,Certified,11378,FERRAN ENTERPRISES; INC.,Architectural and Engineering Managers,HONDURAS
 Other Economic Sector,Certified,10018,SOCCER UNITED MARKETING; LLC,Market Research Analysts and Marketing Specialists*,SOUTH KOREA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,CHINA
-undefined,Certified,10010,ELSEVIER,Market Research Analysts and Marketing Specialists*,CANADA
+Not Available,Certified,10010,ELSEVIER,Market Research Analysts and Marketing Specialists*,CANADA
 Retail,Certified,10018,GRAND APPAREL USA INC,Graphic Designers,THAILAND
 Finance,Certified,10005,DEUTSCHE BANK,Financial Analysts,INDIA
 Finance,Certified,10022,BLACKROCK FINANCIAL MANAGEMENT,Software Developers; Applications,INDIA
@@ -612,7 +612,7 @@ IT,Certified,10001,OPENWAVE COMPUTING LLC,Software Developers; Applications,INDI
 Finance,Certified,10036,ARGONAUT MANAGEMENT LP,Financial Analysts,AUSTRALIA
 Other Economic Sector,Certified,11207,FAITH HOPE & CHARITY COMMUNITY SERVICES; INC.,Preschool Teachers; Except Special Education,PHILIPPINES
 Construction,Certified,11378,FANUKA INC.,Cabinetmakers and Bench Carpenters,ECUADOR
-undefined,Denied,11211,OLD POLAND FOODS; LLC,Chefs and Head Cooks,POLAND
+Not Available,Denied,11211,OLD POLAND FOODS; LLC,Chefs and Head Cooks,POLAND
 IT,Certified,10019,NOMURA AMERICA SERVICES; LLC,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10012,SCHOLASTIC INC.,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,11222,GEORGICA PINE CLOTHEIRS LLC,Fashion Designers,TAIWAN
@@ -648,7 +648,7 @@ Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Financial Analysts,BULGARIA
 Other Economic Sector,Certified,11101,B.C.S. INTERNATIONAL CORPORATION,File Clerks,SOUTH KOREA
 Finance,Certified,10036,MERCER (US) INC.,Actuaries,TRINIDAD AND TOBAGO
 Finance,Certified,10005,DEUTSCHE BANK SECURITIES; INC.,Financial Managers,COLOMBIA
-undefined,Certified,10459,NATIONAL NR CORP. D/B/A NATIONAL BAKERY #7,Bakers,MEXICO
+Not Available,Certified,10459,NATIONAL NR CORP. D/B/A NATIONAL BAKERY #7,Bakers,MEXICO
 Construction,Certified,11101,ZOOM CONTRACTING INC.,Cabinetmakers and Bench Carpenters,ECUADOR
 Finance,Certified,10019,ASIAN CENTURY QUEST CAPITAL LLC,Financial Analysts,JAPAN
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Software Developers; Applications,INDIA
@@ -736,7 +736,7 @@ Retail,Certified,11229,GRAND MARKET INTERNATIONAL CORP,Purchasing Managers,RUSSI
 IT,Certified,10019,ICROSSING; INC.,Software Developers; Applications,INDIA
 Finance,Certified,10167,SG AMERICAS SECURITIES; LLC,Financial Managers,FRANCE
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,INDIA
-undefined,Denied,11215,ROSKO HOLDINGS D/B/A SONG,Cooks; Restaurant,THAILAND
+Not Available,Denied,11215,ROSKO HOLDINGS D/B/A SONG,Cooks; Restaurant,THAILAND
 Retail,Certified,10018,MUJI U.S.A. LIMITED,Market Research Analysts and Marketing Specialists*,TAIWAN
 IT,Certified,10001,MAJESCOMASTEK,Human Resources Managers,INDIA
 Other Economic Sector,Certified,10007,LAW OFFICES OF GERALD KARIKARI; P.C.,Lawyers,CHINA
@@ -779,7 +779,7 @@ Other Economic Sector,Certified,10014,ZENITH MEDIA SERVICES; INC.,Software Devel
 Finance,Certified,10019,NOMURA SECURITIES INTERNATIONAL; INC.,Financial Analysts,INDIA
 Finance,Certified,10013,TOWER RESEARCH CAPITAL LLC,Financial Analysts,ISRAEL
 IT,Certified,10012,INFUSION DEV LLC,Software Developers; Applications,INDIA
-undefined,Certified,10020,CAREY MANAGEMENT SERVICES,Software Developers; Applications,INDIA
+Not Available,Certified,10020,CAREY MANAGEMENT SERVICES,Software Developers; Applications,INDIA
 Educational Services,Certified,10012,NEW YORK UNIVERSITY,Foreign Language and Literature Teachers; Postsecondary,CHINA
 Finance,Certified,10282,GOLDMAN SACHS & CO.,Software Developers; Applications,TURKEY
 Construction,Certified,10014,TURNER CONSTRUCTION COMPANY,Cost Estimators,VENEZUELA
@@ -796,7 +796,7 @@ Aerospace,Certified,10010,THORNTON TOMASETTI; INC.,Civil Engineers,CHINA
 Aerospace,Certified,10005,OVE ARUP & PARTNERS PC,Civil Engineers,PHILIPPINES
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Financial Managers,CANADA
 Health Care,Certified,11101,ALLIEDMEDIX RESOURCES INC,Computer Programmers,INDIA
-undefined,Denied,10169,ING INVESTMENT MANAGEMENT,Treasurers; Controllers; and Chief Financial Officers,CANADA
+Not Available,Denied,10169,ING INVESTMENT MANAGEMENT,Treasurers; Controllers; and Chief Financial Officers,CANADA
 IT,Certified,10018,LONGI ENGINEERING; P.C.,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10017,CARAT USA,Marketing Managers,INDIA
 Finance,Certified,10022,CITIGROUP GLOBAL MARKETS INC.,Financial Analysts,INDIA
@@ -834,7 +834,7 @@ Finance,Certified,10019,TURKIYE VAKIFLAR BANKASI TAO A/K/A VAKIFBANK,Financial E
 Finance,Certified,10005,DEUTSCHE BANK,Software Developers; Applications,TURKEY
 Finance,Certified,10022,BLACKROCK FINANCIAL MANAGEMENT,Financial Analysts,SOUTH KOREA
 Other Economic Sector,Certified,10036,HOME BOX OFFICE; INC.,General and Operations Managers,FRANCE
-undefined,Denied,10302,GIOVES PIZZA; INC DBA/BOTHERS PIZZA,Cooks; Restaurant,MEXICO
+Not Available,Denied,10302,GIOVES PIZZA; INC DBA/BOTHERS PIZZA,Cooks; Restaurant,MEXICO
 Other Economic Sector,Certified,10011,CROZIER FINE ARTS; INC.,Transportation; Storage; and Distribution Managers,UNITED KINGDOM
 Other Economic Sector,Certified,10022,MCKINSEY & COMPANY; INC UNITED STATES,Management Analysts,INDIA
 IT,Certified,10016,RELIANCE COMMUNICATIONS INC,Marketing Managers,CANADA
@@ -890,7 +890,7 @@ Finance,Certified,10018,THE NEW YORK TIMES COMPANY,Software Developers; Applicat
 Finance,Certified,10022,CERBERUS CAPITAL MANAGEMENT LP,Financial Analysts,CANADA
 Finance,Certified,10038,BGC PARTNERS INC.,Software Developers; Applications,INDIA
 Finance,Certified,10022,CERBERUS CAPITAL MANAGEMENT LP,Software Developers; Applications,UNITED STATES OF AMERICA
-undefined,Certified,10016,FNY CAPITAL MANAGEMENT LP,Financial Analysts,FRANCE
+Not Available,Certified,10016,FNY CAPITAL MANAGEMENT LP,Financial Analysts,FRANCE
 Finance,Certified,10001,ISOA LLC,Management Analysts,INDIA
 IT,Certified,10036,NORTHPOINT SOLUTIONS,Computer Systems Analysts,INDIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Systems Software,INDIA
@@ -908,7 +908,7 @@ Finance,Certified,10022,CHINA MERCHANTS BANK CO.; LTD,Computer and Information S
 Other Economic Sector,Certified,10001,SANDBERG MANAGEMENT CORP,Market Research Analysts and Marketing Specialists*,CHINA
 Retail,Certified,11201,ETSY INC.,Software Developers; Applications,JORDAN
 Health Care,Certified,10003,NATURO-MEDICAL HEALTH CARE P.C.,Medical Scientists; Except Epidemiologists,CHINA
-undefined,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Software Developers; Applications,PHILIPPINES
+Not Available,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Software Developers; Applications,PHILIPPINES
 Finance,Certified,10018,MARKIT,Software Developers; Applications,INDIA
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Network and Computer Systems Administrators*,INDIA
 Other Economic Sector,Certified,10474,THIRD GENERATION SEAFOOD,Market Research Analysts and Marketing Specialists*,JAPAN
@@ -921,7 +921,7 @@ Other Economic Sector,Certified,10019,KASOWITZ; BENSON; TORRES & FRIEDMAN LLP,La
 Other Economic Sector,Certified,10005,THE CAPITAL MARKETS COMPANY,Software Developers; Applications,INDIA
 IT,Certified,10018,BAHA INDUSTRIES CORP. DBA OPEN SYSTEMS TECHNOLOGIES,Computer Systems Analysts,INDIA
 Health Care,Certified,10029,MOUNT SINAI MEDICAL CENTER,Psychiatrists,COLOMBIA
-undefined,Denied,11207,FAITH HOPE & CHARITY COMMUNITY SERVICES DAY CARE,Preschool Teachers; Except Special Education,PHILIPPINES
+Not Available,Denied,11207,FAITH HOPE & CHARITY COMMUNITY SERVICES DAY CARE,Preschool Teachers; Except Special Education,PHILIPPINES
 Finance,Certified,10282,GOLDMAN SACHS & CO.,Computer Systems Analysts,INDIA
 Finance,Certified,10005,QBE AMERICAS; INC.,Operations Research Analysts,GERMANY
 Other Economic Sector,Certified,10011,BARNES&NOBLE.COM,Software Developers; Applications,INDIA
@@ -944,7 +944,7 @@ Hospitality,Certified,10009,NIGHTS OF CABIRIA LLC,Cooks; Restaurant,MEXICO
 Health Care,Certified,11418,JAMAICA HOSPITAL MEDICAL CENTER,Obstetricians and Gynecologists,GREECE
 Finance,Certified,10022,CITICORP CREDIT SERVICES; INC. (USA),Software Developers; Applications,INDIA
 Transportation,Certified,10018,MEDITERRANEAN SHIPPING COMPANY (USA) INC.,Paralegals and Legal Assistants,HONDURAS
-undefined,Certified,10020,CAREY MANAGEMENT SERVICES,Financial Managers,FRANCE
+Not Available,Certified,10020,CAREY MANAGEMENT SERVICES,Financial Managers,FRANCE
 Other Economic Sector,Certified,11363,OPEN DOOR CHURCH OF NEW YORK INC,Music Directors and Composers,SOUTH KOREA
 Finance,Certified,10282,GOLDMAN SACHS & CO.,Computer Systems Analysts,INDIA
 Finance,Certified,10018,MARKIT,Software Developers; Applications,INDIA
@@ -1010,7 +1010,7 @@ Other Economic Sector,Certified,10022,MCKINSEY & COMPANY; INC UNITED STATES,Mana
 Other Economic Sector,Certified,10036,HALACH GOLD INC,Financial Managers,INDIA
 Health Care,Certified,10457,BRONX LEBANON HOSPITAL CENTER,Pediatricians; General,INDIA
 Hospitality,Certified,10001,DON PEPI DELI; INC.,Cooks; Restaurant,MEXICO
-undefined,Certified,11373,RAINTREE HEALTHCARE STAFFING; INC.,Operations Research Analysts,PHILIPPINES
+Not Available,Certified,11373,RAINTREE HEALTHCARE STAFFING; INC.,Operations Research Analysts,PHILIPPINES
 Other Economic Sector,Certified,10036,THOMSON REUTERS MARKETS LLC,Reporters and Correspondents,CANADA
 IT,Certified,10018,BAHA INDUSTRIES CORP. DBA OPEN SYSTEMS TECHNOLOGIES,Software Developers; Applications,INDIA
 Finance,Certified,10006,TRIAD SECURITIES CORP.,Accountants and Auditors,SOUTH KOREA
@@ -1019,7 +1019,7 @@ IT,Certified,10016,INCAPTURE TECHNOLOGIES LLC,Financial Analysts,INDIA
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Financial Analysts,CHINA
 Finance,Certified,10022,CITIBANK; N.A,Software Developers; Applications,PHILIPPINES
 Finance,Certified,10022,GWM GROUP INC,Personal Financial Advisors,BOLIVIA
-undefined,Certified,10011,ABOUT.COM,Software Developers; Applications,INDIA
+Not Available,Certified,10011,ABOUT.COM,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,11222,ETS CONTRACTING INC.,Environmental Engineers,SLOVAKIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,INDIA
 Finance,Certified,10022,BANCO DO BRASIL S A,Personal Financial Advisors,BRAZIL
@@ -1035,7 +1035,7 @@ Finance,Certified,10036,IRIDIUM CONSULTING LLC,Computer Systems Analysts,UNITED 
 Other Economic Sector,Certified,11203,HOSPITAL CLINIC HOME CENTER; INC.,Clinical; Counseling; and School Psychologists,TAIWAN
 IT,Certified,10014,EVERYDAY HEALTH INC,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10016,SFM REALTY CORP.,Lawyers,ISRAEL
-undefined,Denied,10016,A G AARONSON CPA,Accountants,SOUTH KOREA
+Not Available,Denied,10016,A G AARONSON CPA,Accountants,SOUTH KOREA
 Finance,Certified,10012,TWO SIGMA INVESTMENTS; LLC,Software Developers; Applications,CANADA
 IT,Certified,10001,CINETIC MEDIA LLC,General and Operations Managers,CANADA
 IT,Certified,10004,PREMIUM TECHNOLOGY INC.,Software Developers; Applications,CHINA
@@ -1111,7 +1111,7 @@ Other Economic Sector,Certified,10111,TISHMAN SPEYER PROPERTIES LP,Financial Man
 Other Economic Sector,Certified,10023,TIME WARNER ENTERTAINMENT COMPANY; L.P.,Producers and Directors,ARGENTINA
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Computer Systems Analysts,JAPAN
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Software Developers; Systems Software,MEXICO
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAMAICA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAMAICA
 IT,Certified,10019,RESOURCE SEARCH COMPANY INC.,Software Developers; Applications,INDIA
 Finance,Certified,10038,AMERICAN INTERNATIONAL GROUP; INC.,Actuaries,CHINA
 IT,Certified,10018,BAHA INDUSTRIES CORP. DBA OPEN SYSTEMS TECHNOLOGIES,Software Developers; Applications,INDIA
@@ -1135,7 +1135,7 @@ Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Software Developers; Applicatio
 IT,Certified,10119,CELERITY IT OF NJ; LLC,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10023,ESPN SALES & MARKETING ; INC,Software Developers; Applications,INDIA
 Finance,Certified,10036,MIZUHO ALTERNATIVE INVESTMENTS,Software Developers; Applications,CHINA
-undefined,Certified,10018,THE BACHRACH GROUP; LTD.,Management Analysts,SLOVAKIA
+Not Available,Certified,10018,THE BACHRACH GROUP; LTD.,Management Analysts,SLOVAKIA
 Other Economic Sector,Certified,10017,WESTWATER EQUITIES LLC,Appraisers and Assessors of Real Estate,JAPAN
 Other Economic Sector,Certified,10002,HAND-IN-HAND DEVELOPMENT; INC.,Speech-Language Pathologists,UNITED STATES OF AMERICA
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Software Developers; Applications,INDIA
@@ -1181,7 +1181,7 @@ IT,Certified,10017,INTRALINKS; INC.,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10018,R/GA MEDIA GROUP,Advertising and Promotions Managers,INDIA
 Educational Services,Certified,10027,TEACHERS COLLEGE; COLUMBIA UNIVERSITY,Psychology Teachers; Postsecondary,INDIA
 Finance,Certified,10169,ING NORTH AMERICA INSURANCE CORPORATION,Actuaries,CHINA
-undefined,Certified,11040,ARJAY TELECOMMUNICATIONS INC,Information Security Analysts; Web Developers; and Computer Network Architects,PHILIPPINES
+Not Available,Certified,11040,ARJAY TELECOMMUNICATIONS INC,Information Security Analysts; Web Developers; and Computer Network Architects,PHILIPPINES
 Retail,Certified,10017,AVON PRODUCTS; INC,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10016,XL MARKETING,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10022,MCKINSEY & COMPANY; INC UNITED STATES,Management Analysts,TURKEY
@@ -1225,7 +1225,7 @@ Other Economic Sector,Certified,10001,GLOBAL CONTACTS INC,Industrial Engineers,I
 IT,Certified,10017,PCI-MEDIA IMPACT,Social and Community Service Managers,MEXICO
 Finance,Certified,10018,THE NEW YORK TIMES COMPANY,Network and Computer Systems Administrators*,CHINA
 Finance,Certified,10020,THE BANK OF TOKYO-MITSUBISHI UFJ; LTD.,Software Developers; Applications,INDIA
-undefined,Certified,10001,DM SERVICES; INC.,Market Research Analysts and Marketing Specialists*,ARGENTINA
+Not Available,Certified,10001,DM SERVICES; INC.,Market Research Analysts and Marketing Specialists*,ARGENTINA
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Network and Computer Systems Administrators*,INDIA
 Finance,Certified,10022,MIZUHO SECURITIES USA INC.,Software Developers; Applications,INDIA
@@ -1271,7 +1271,7 @@ Other Economic Sector,Certified,10007,MOODYS ANALYTICS,Computer Systems Analysts
 IT,Certified,10013,NEW YORK EHEALTH COLLABORATIVE,Computer and Information Systems Managers,INDIA
 IT,Certified,10018,ACTIMIZE INC,Software Developers; Applications,INDIA
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Software Developers; Applications,INDIA
-undefined,Denied,10018,THE MILLWORK TRADING CO. D/B/A LI&FUNG,Industrial Production Managers,ISRAEL
+Not Available,Denied,10018,THE MILLWORK TRADING CO. D/B/A LI&FUNG,Industrial Production Managers,ISRAEL
 Educational Services,Certified,10014,KAPLAN; INC.,Software Developers; Applications,INDIA
 Finance,Certified,10019,AMUNDI INVESTMENTS USA; LLC,Financial Managers,UNITED KINGDOM
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,CHINA
@@ -1282,7 +1282,7 @@ Finance,Certified,10036,METLIFE GROUP; INC.,Software Developers; Applications,IN
 Other Economic Sector,Certified,10036,SUMITOMO REAL ESTATE SALES USA INC,Financial Analysts,JAPAN
 Finance,Certified,10036,METLIFE GROUP; INC.,Financial Analysts,CANADA
 Advanced Mfg,Certified,10019,MIKIMOTO,Chief Executives,ITALY
-undefined,Certified,10001,VISIBLE WORLD; INC.,Software Developers; Applications,INDIA
+Not Available,Certified,10001,VISIBLE WORLD; INC.,Software Developers; Applications,INDIA
 IT,Certified,10019,NOMURA AMERICA SERVICES; LLC,Software Developers; Applications,INDIA
 IT,Certified,10019,NOMURA AMERICA SERVICES; LLC,Software Developers; Applications,INDIA
 Finance,Certified,10019,NOMURA SECURITIES INTERNATIONAL; INC.,Financial Managers,INDIA
@@ -1307,7 +1307,7 @@ IT,Certified,10011,MEDIAOCEAN,Database Administrators,CHINA
 Aerospace,Certified,10010,THORNTON TOMASETTI; INC.,Civil Engineers,INDIA
 Finance,Certified,10022,DAVIDSON KEMPNER CAPITAL MANAGMENT LLC,Software Developers; Applications,INDIA
 Advanced Mfg,Certified,11232,SOUTHERN TELECOM INC,Commercial and Industrial Designers,JAPAN
-undefined,Denied,11105,HEAVENS HONEY INC.,Transportation; Storage; and Distribution Managers,ISRAEL
+Not Available,Denied,11105,HEAVENS HONEY INC.,Transportation; Storage; and Distribution Managers,ISRAEL
 Other Economic Sector,Certified,10010,COHN & WOLFE,Accountants and Auditors,BELARUS
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Information Security Analysts; Web Developers; and Computer Network Architects,INDIA
 Finance,Certified,10018,ADVISEN LTD,Mathematicians,INDIA
@@ -1322,8 +1322,8 @@ Other Economic Sector,Certified,10019,GORDON KAHN & ASSOCIATES LLC,Architects; E
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Computer Systems Analysts,INDIA
 Aerospace,Certified,11101,TWIN PEAKS INC,Mechanical Engineers,PHILIPPINES
 IT,Certified,10019,ARVATO SYSTEMS NA;INC.,Public Relations Specialists,GERMANY
-undefined,Denied,10036,SYSTEC INTERNATIONAL INC,Computer Programmers,INDIA
-undefined,Certified,10021,THE ROGOSIN INSTITUTE,Software Developers; Applications; R&D (ACWIA Only),SOUTH KOREA
+Not Available,Denied,10036,SYSTEC INTERNATIONAL INC,Computer Programmers,INDIA
+Not Available,Certified,10021,THE ROGOSIN INSTITUTE,Software Developers; Applications; R&D (ACWIA Only),SOUTH KOREA
 IT,Certified,11355,SV IT INC,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10011,WEBMD LLC,Market Research Analysts and Marketing Specialists*,INDIA
@@ -1400,12 +1400,12 @@ Finance,Certified,10022,CANTOR FITZGERALD LP,Public Relations Specialists,UNITED
 IT,Certified,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Network and Computer Systems Administrators*,INDIA
 Finance,Certified,10022,CANTOR FITZGERALD LP,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10019,BBDO USA LLC,Chief Executives,CANADA
-undefined,Certified,10023,MEDICAL & BEHAVIORAL HEALTH RESEARCH; PC,Financial Managers,ALBANIA
+Not Available,Certified,10023,MEDICAL & BEHAVIORAL HEALTH RESEARCH; PC,Financial Managers,ALBANIA
 Finance,Certified,10020,E*TRADE FINANCIAL CORPORATION,Software Developers; Applications,INDIA
 Finance,Certified,10036,MERCER HEALTH & BENEFITS LLC,Medical and Health Services Managers,MEXICO
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,CHINA
 Aerospace,Certified,10119,PARSONS BRINCKERHOFF; INC.,Geoscientists; Except Hydrologists and Geographers,GERMANY
-undefined,Denied,10013,BRASSERIE FELIX; INC,Cooks; Restaurant,ECUADOR
+Not Available,Denied,10013,BRASSERIE FELIX; INC,Cooks; Restaurant,ECUADOR
 Retail,Certified,11219,GSV PHARMACY;INC.,Pharmacists,INDIA
 Aerospace,Certified,10119,PARSONS BRINCKERHOFF; INC.,Civil Engineers,BRAZIL
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Economists,INDIA
@@ -1421,7 +1421,7 @@ Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Computer Systems Analysts,KENYA
 Other Economic Sector,Certified,10036,ZUKERMAN GORE BRANDEIS & CROSSMAN LLP,Lawyers,CANADA
 Other Economic Sector,Certified,10018,LF USA INC.,Art Directors,SOUTH KOREA
 Construction,Certified,11356,DASNY MECHANICAL INC.,Software Developers; Applications,MALAYSIA
-undefined,Certified,10011,OUTBRAIN,Marketing Managers,ISRAEL
+Not Available,Certified,10011,OUTBRAIN,Marketing Managers,ISRAEL
 Other Economic Sector,Certified,10010,TURNER & TOWNSEND FERZAN ROBBINS LLC,Construction Managers,CANADA
 IT,Certified,10017,APPLICATION SECURITY; INC.,Computer and Information Research Scientists,FRANCE
 IT,Certified,10018,SCOPUS IT INC,Software Developers; Applications,INDIA
@@ -1490,7 +1490,7 @@ IT,Certified,10016,GRAVITAS TECHNOLOGY SERVICES; LLC,Software Developers; Applic
 Other Economic Sector,Certified,10011,WEBMD LLC,Database Administrators,INDIA
 Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Financial Analysts,INDIA
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Operations Research Analysts,CHINA
-undefined,Certified,10003,MEDIDATA SOLUTIONS,Software Developers; Applications,INDIA
+Not Available,Certified,10003,MEDIDATA SOLUTIONS,Software Developers; Applications,INDIA
 Finance,Certified,10022,JEFFERIES & COMPANY,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10017,KIRAN JEWELS INC,Market Research Analysts and Marketing Specialists*,INDIA
 Other Economic Sector,Certified,10018,IN VOGUE STUDIOS; LTD.,Graphic Designers,SOUTH KOREA
@@ -1583,11 +1583,11 @@ Finance,Certified,10282,GOLDMAN SACHS & CO.,Software Developers; Applications,IN
 Finance,Certified,11235,CUSTOM ACCOUNTING LLC,Chief Executives,ISRAEL
 Finance,Certified,10018,HSBC SECURITIES (USA) INC.,Software Developers; Applications,POLAND
 Other Economic Sector,Certified,10016,ADMARKETPLACE; INC,Software Developers; Systems Software,INDIA
-undefined,Denied,11367,ALCON EXPRESS CORP.,Operations Research Analysts,CHINA
+Not Available,Denied,11367,ALCON EXPRESS CORP.,Operations Research Analysts,CHINA
 Educational Services,Certified,10471,MANHATTAN COLLEGE,Psychology Teachers; Postsecondary,TAIWAN
 Finance,Certified,10019,AEGIS CAPITAL CORP.,Economists,PAKISTAN
 IT,Certified,10007,STREAMINGEDGE; INC.,Software Developers; Applications,UNITED KINGDOM
-undefined,Certified,10018,JUVENS; INC.,Materials Scientists,SOUTH KOREA
+Not Available,Certified,10018,JUVENS; INC.,Materials Scientists,SOUTH KOREA
 Other Economic Sector,Certified,10011,BARNES&NOBLE.COM,Software Developers; Systems Software,CHINA
 Finance,Certified,10036,MERCER (US) INC.,Software Developers; Applications,INDIA
 Advanced Mfg,Certified,11373,SABRINA L; INC. D/B/A LA ANTIOQUENA BAKERY,Bakers,MEXICO
@@ -1643,10 +1643,10 @@ Other Economic Sector,Certified,10001,DRAFTFCB; INC.,Marketing Managers,UNITED K
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10022,BLOOMBERG L.P.,Software Developers; Applications,INDIA
-undefined,Denied,10282,GOLDMAN SACHS & CO.,Financial Analysts,COLOMBIA
+Not Available,Denied,10282,GOLDMAN SACHS & CO.,Financial Analysts,COLOMBIA
 Advanced Mfg,Certified,11235,MINI-CIRCUITS,Software Developers; Applications,INDIA
 Finance,Certified,10019,MACQUARIE HOLDINGS (USA) INC.,Financial Analysts,INDIA
-undefined,Denied,10154,BRISTOL MYERS SQUIBB COMPANY,Statisticians,CHINA
+Not Available,Denied,10154,BRISTOL MYERS SQUIBB COMPANY,Statisticians,CHINA
 Health Care,Certified,11379,VIJAYPAL ARYA PHYSICIAN PC,Medical Scientists; Except Epidemiologists,INDIA
 Educational Services,Certified,11210,BROOKLYN COLLEGE OF THE CITY UNIVERSITY OF NEW YOR,Education Teachers; Postsecondary,CHINA
 IT,Certified,10016,GRAVITAS TECHNOLOGY SERVICES; LLC,Software Developers; Applications,INDIA
@@ -1658,13 +1658,13 @@ Retail,Certified,10001,COACH INC.,Human Resources Managers,IRELAND
 IT,Certified,11040,SQL DATA SOLUTIONS; INC.;,Software Developers; Applications,INDIA
 Finance,Certified,10018,HSBC SECURITIES (USA) INC.,Financial Analysts,CHINA
 Finance,Certified,10017,CHINATRUST COMMERCIAL BANK NEW YORK BRANCH,Credit Analysts,TAIWAN
-undefined,Denied,10018,MATRAT LLC,Food Service Managers,BANGLADESH
+Not Available,Denied,10018,MATRAT LLC,Food Service Managers,BANGLADESH
 Other Economic Sector,Certified,10019,TIME WARNER INC.,Financial Analysts,CANADA
 Health Care,Certified,10017,RAMANI GROUP LLC,Technical Writers,JAPAN
 Finance,Certified,10018,THE NEW YORK TIMES COMPANY,Software Developers; Applications,INDIA
 IT,Certified,10004,AMTEX SYSTEMS; INC.,Software Developers; Applications,INDIA
 Educational Services,Certified,10003,NEW YORK FILM ACADEMY LTD,Accountants and Auditors,TAIWAN
-undefined,Certified,11354,SMB WIRELESS INC.,Chief Executives,SOUTH KOREA
+Not Available,Certified,11354,SMB WIRELESS INC.,Chief Executives,SOUTH KOREA
 Other Economic Sector,Certified,11373,STAR AMERICA; INC.,Preschool Teachers; Except Special Education,CHINA
 Other Economic Sector,Certified,10036,THOMSON REUTERS MARKETS LLC,Marketing Managers,CHINA
 Advanced Mfg,Certified,10003,J. CREW,Computer Systems Analysts,INDIA
@@ -1744,7 +1744,7 @@ IT,Certified,10003,OPENCROWD; INC.,Software Developers; Applications,INDIA
 Finance,Certified,10005,DEUTSCHE BANK SECURITIES; INC.,Financial Managers,MEXICO
 Finance,Certified,10005,QBE AMERICAS; INC.,Software Developers; Applications,INDIA
 Hospitality,Certified,10024,1996-07-01,Cooks; Restaurant,MEXICO
-undefined,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Accountants and Auditors,PHILIPPINES
+Not Available,Certified,11377,PROFESSIONAL PLACEMENT & RECRUITMENT INC.,Accountants and Auditors,PHILIPPINES
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Economists,NEPAL
 Finance,Certified,10020,THE BANK OF TOKYO-MITSUBISHI UFJ; LTD.,Computer Systems Analysts,INDIA
 Other Economic Sector,Certified,10036,VIACOM INTERNATIONAL; INC. (D/B/A VIACOM MEDIA NET,Software Developers; Systems Software,INDIA
@@ -1761,7 +1761,7 @@ Finance,Certified,10010,CREDIT SUISSE SECURITIES (USA) LLC,Computer Systems Anal
 Health Care,Certified,11203,NEW YORK CITY HEALTH & HOSPITAL CORPORATION,Psychiatrists,EGYPT
 Other Economic Sector,Certified,10011,BARNES&NOBLE.COM,Software Developers; Systems Software,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Information Security Analysts; Web Developers; and Computer Network Architects,INDIA
-undefined,Denied,10302,GREATER NORTHEASTERN DOOR MANFACTORING CORP.,Construction Laborers,MEXICO
+Not Available,Denied,10302,GREATER NORTHEASTERN DOOR MANFACTORING CORP.,Construction Laborers,MEXICO
 Advanced Mfg,Certified,10003,J. CREW,Software Developers; Applications,INDIA
 Finance,Certified,10022,J. GOLDMAN & CO.; L.P.,Financial Analysts,INDIA
 Advanced Mfg,Certified,10022,SONY CORPORATION OF AMERICA,Network and Computer Systems Administrators*,PANAMA
@@ -1797,7 +1797,7 @@ IT,Certified,10038,ARISTON TEK; INC,Computer Programmers,INDIA
 Other Economic Sector,Certified,11372,NEW YORK CHO DAE CHURCH,Clergy,SOUTH KOREA
 Finance,Certified,10022,CRISIL IREVNA US LLC,Actuaries,MEXICO
 Construction,Certified,10016,RCDOLNER LLC,Architectural and Engineering Managers,LEBANON
-undefined,Certified,10065,DBMC LLC,Cooks; Private Household,PHILIPPINES
+Not Available,Certified,10065,DBMC LLC,Cooks; Private Household,PHILIPPINES
 IT,Certified,10014,GOLDCREST FACILITIES,Computer and Information Systems Managers,SINGAPORE
 Other Economic Sector,Certified,10011,KCD INC.,Public Relations Specialists,BRAZIL
 Finance,Certified,10005,DEUTSCHE BANK SECURITIES; INC.,Financial Analysts,ARGENTINA
@@ -1832,7 +1832,7 @@ Other Economic Sector,Certified,10022,MCKINSEY & COMPANY; INC UNITED STATES,Mana
 Finance,Certified,10036,MORGAN STANLEY & CO. LLC,Computer and Information Systems Managers,INDIA
 Retail,Certified,10011,TORY BURCH,Merchandise Displayers and Window Trimmers,ITALY
 Other Economic Sector,Certified,10022,MCKINSEY & COMPANY; INC UNITED STATES,Management Analysts,MEXICO
-undefined,Certified,10011,OUTBRAIN,General and Operations Managers,ISRAEL
+Not Available,Certified,10011,OUTBRAIN,General and Operations Managers,ISRAEL
 Health Care,Certified,10029,MOUNT SINAI MEDICAL CENTER,Computer and Information Systems Managers,AUSTRALIA
 IT,Certified,10018,ACTIVEHEALTH MANAGEMENT,Information Security Analysts; Web Developers; and Computer Network Architects,INDIA
 Other Economic Sector,Certified,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,JAPAN
@@ -1875,94 +1875,94 @@ IT,Certified,10065,ITHAKA HARBORS; INC.,Archivists,INDIA
 Health Care,Certified,10021,ZHANG MEDICAL PC,Medical Scientists; Except Epidemiologists,CHINA
 Other Economic Sector,Certified,10001,Q4 DESIGNS; LLC.,Fashion Designers,SOUTH KOREA
 Transportation,Certified,10018,MEDITERRANEAN SHIPPING COMPANY (USA) INC.,Transportation; Storage; and Distribution Managers,ITALY
-undefined,Denied,10005,EBUSINESSWARE; INC.,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10021,MAURICE DEANE,Personal and Home Care Aides,PHILIPPINES
-undefined,Denied,10016,CHARLES KOMAR & SONS; INC.,General and Operations Managers,TURKEY
-undefined,Denied,10025,BROADWAY 104 LLC DBA CAFE DU SOLEIL,Chefs and Head Cooks,ECUADOR
-undefined,Denied,10013,TWO BACALHAUSINC DBA PAO RESTAURANT,Cooks; Restaurant,ECUADOR
-undefined,Denied,10462,MARTONE BROS; INC,Janitors and Cleaners; Except Maids and Housekeeping Cleaners,MEXICO
-undefined,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,CANADA
-undefined,Denied,11428,PRESTIGE CATERERS INC.,Cooks; Restaurant,COLOMBIA
-undefined,Denied,10013,THE ORIGINAL VINCENTS,Cooks; Restaurant,MEXICO
-undefined,Denied,11232,BASONAS CONSTRUCTION CORP.,Stonemasons,ECUADOR
-undefined,Denied,10016,MADISON BISTRO,Cooks; Restaurant,IVORY COAST
-undefined,Denied,11356,TEKTON CONTRACTING CORP.,First-Line Supervisors/Managers of Helpers; Laborers; and Material Movers; Hand,CYPRUS
-undefined,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10021,DR. MEREDITH KATO,Maids and Housekeeping Cleaners,GRENADA
-undefined,Denied,11378,RADHASWAMY; INC. D/B/A RAJA FOODS,First-Line Supervisors/Managers of Retail Sales Workers,INDIA
+Not Available,Denied,10005,EBUSINESSWARE; INC.,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10021,MAURICE DEANE,Personal and Home Care Aides,PHILIPPINES
+Not Available,Denied,10016,CHARLES KOMAR & SONS; INC.,General and Operations Managers,TURKEY
+Not Available,Denied,10025,BROADWAY 104 LLC DBA CAFE DU SOLEIL,Chefs and Head Cooks,ECUADOR
+Not Available,Denied,10013,TWO BACALHAUSINC DBA PAO RESTAURANT,Cooks; Restaurant,ECUADOR
+Not Available,Denied,10462,MARTONE BROS; INC,Janitors and Cleaners; Except Maids and Housekeeping Cleaners,MEXICO
+Not Available,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,CANADA
+Not Available,Denied,11428,PRESTIGE CATERERS INC.,Cooks; Restaurant,COLOMBIA
+Not Available,Denied,10013,THE ORIGINAL VINCENTS,Cooks; Restaurant,MEXICO
+Not Available,Denied,11232,BASONAS CONSTRUCTION CORP.,Stonemasons,ECUADOR
+Not Available,Denied,10016,MADISON BISTRO,Cooks; Restaurant,IVORY COAST
+Not Available,Denied,11356,TEKTON CONTRACTING CORP.,First-Line Supervisors/Managers of Helpers; Laborers; and Material Movers; Hand,CYPRUS
+Not Available,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10021,DR. MEREDITH KATO,Maids and Housekeeping Cleaners,GRENADA
+Not Available,Denied,11378,RADHASWAMY; INC. D/B/A RAJA FOODS,First-Line Supervisors/Managers of Retail Sales Workers,INDIA
 Finance,Denied,10004,GOLDMAN; SACHS & CO.,Operations Research Analysts,CHINA
-undefined,Denied,10018,JONES JEANSWEAR GROUP; INC,Industrial Production Managers,INDIA
-undefined,Denied,10013,CANAL MUSIC AUDIO; INC.,Audio and Video Equipment Technicians,ISRAEL
+Not Available,Denied,10018,JONES JEANSWEAR GROUP; INC,Industrial Production Managers,INDIA
+Not Available,Denied,10013,CANAL MUSIC AUDIO; INC.,Audio and Video Equipment Technicians,ISRAEL
 Hospitality,Denied,10022,THE GREY LAKE; INC. DBA METRO 53,Cooks; Restaurant,ECUADOR
-undefined,Denied,11385,AUTO GLEN COLLISION,Automotive Service Technicians and Mechanics,ECUADOR
-undefined,Denied,10306,BASSO LANDSCAPING; INC,Tree Trimmers and Pruners,ECUADOR
-undefined,Denied,10282,GOLDMAN SACHS & CO.,Computer and Information Scientists; Research,INDIA
-undefined,Denied,11232,BROOKLYN CULTURAL CENTER OF NEW YORK INC,Food Service Managers,EGYPT
-undefined,Denied,10019,319 W 51ST STREET RESTAURANT INC,Cooks; Restaurant,GUATEMALA
+Not Available,Denied,11385,AUTO GLEN COLLISION,Automotive Service Technicians and Mechanics,ECUADOR
+Not Available,Denied,10306,BASSO LANDSCAPING; INC,Tree Trimmers and Pruners,ECUADOR
+Not Available,Denied,10282,GOLDMAN SACHS & CO.,Computer and Information Scientists; Research,INDIA
+Not Available,Denied,11232,BROOKLYN CULTURAL CENTER OF NEW YORK INC,Food Service Managers,EGYPT
+Not Available,Denied,10019,319 W 51ST STREET RESTAURANT INC,Cooks; Restaurant,GUATEMALA
 Construction,Denied,11356,MARBLE TECHNIQUES; INC.,Helpers--Brickmasons; Blockmasons; Stonemasons; and Tile and Marble Setters,ECUADOR
-undefined,Denied,10001,BLAU; BROWN & LEONARD; LLC,Law Clerks,TAIWAN
-undefined,Denied,11207,PILGRIM BAPTIST CHURCH,Maintenance and Repair Workers; General,ECUADOR
-undefined,Denied,10282,GOLDMAN;SACHS & CO.,Financial Analysts,CHINA
-undefined,Denied,10016,US JAPAN PUBLICATION NY INC,Reporters and Correspondents,JAPAN
-undefined,Denied,10011,TORY BURCH; LLC,Merchandise Displayers and Window Trimmers,ITALY
-undefined,Denied,10282,GOLDMAN; SACHS & CO.,Operations Research Analysts,INDIA
-undefined,Denied,10013,ISTYLE MEDIA,Graphic Designers,UNITED KINGDOM
-undefined,Denied,10017,YS PUBLISHIG CO.; INC.,Graphic Designers,JAPAN
+Not Available,Denied,10001,BLAU; BROWN & LEONARD; LLC,Law Clerks,TAIWAN
+Not Available,Denied,11207,PILGRIM BAPTIST CHURCH,Maintenance and Repair Workers; General,ECUADOR
+Not Available,Denied,10282,GOLDMAN;SACHS & CO.,Financial Analysts,CHINA
+Not Available,Denied,10016,US JAPAN PUBLICATION NY INC,Reporters and Correspondents,JAPAN
+Not Available,Denied,10011,TORY BURCH; LLC,Merchandise Displayers and Window Trimmers,ITALY
+Not Available,Denied,10282,GOLDMAN; SACHS & CO.,Operations Research Analysts,INDIA
+Not Available,Denied,10013,ISTYLE MEDIA,Graphic Designers,UNITED KINGDOM
+Not Available,Denied,10017,YS PUBLISHIG CO.; INC.,Graphic Designers,JAPAN
 Hospitality,Denied,10003,MAYS KU E BA INC.,Bookkeeping; Accounting; and Auditing Clerks,SOUTH KOREA
-undefined,Denied,10022,QS INVESTORS HOLDINGS; LLC,Financial Analysts,UNITED KINGDOM
-undefined,Denied,10016,HMS,Database Administrators,INDIA
-undefined,Denied,11222,AUCAPINA CABINETS; INC.,Cabinetmakers and Bench Carpenters,ECUADOR
-undefined,Denied,11232,SIMON LIU INC.,Public Relations Specialists,JAPAN
-undefined,Denied,11229,ALL CITY FAMILY HEALTH CARE CENTER; INC.,Mechanical Engineers,EGYPT
-undefined,Denied,10011,MEDIAMIND TECHNOLOGIES,Sales Managers,CHINA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,PHILIPPINES
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
-undefined,Denied,10003,IRIDIUM CONSULTING LLC,Computer Systems Analysts,UNITED KINGDOM
-undefined,Denied,10463,BAYVIEW REAL ESTATE CONSULTANTS; INCORPORATED,Cost Estimators,UNITED KINGDOM
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,PHILIPPINES
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,CANADA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,ISRAEL
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAPAN
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,SRI LANKA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAMAICA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
-undefined,Denied,10003,MEDIDATA SOLUTIONS,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10013,RDA INTERNATIONAL INC,Financial Managers,NEW ZEALAND
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
+Not Available,Denied,10022,QS INVESTORS HOLDINGS; LLC,Financial Analysts,UNITED KINGDOM
+Not Available,Denied,10016,HMS,Database Administrators,INDIA
+Not Available,Denied,11222,AUCAPINA CABINETS; INC.,Cabinetmakers and Bench Carpenters,ECUADOR
+Not Available,Denied,11232,SIMON LIU INC.,Public Relations Specialists,JAPAN
+Not Available,Denied,11229,ALL CITY FAMILY HEALTH CARE CENTER; INC.,Mechanical Engineers,EGYPT
+Not Available,Denied,10011,MEDIAMIND TECHNOLOGIES,Sales Managers,CHINA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,PHILIPPINES
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
+Not Available,Denied,10003,IRIDIUM CONSULTING LLC,Computer Systems Analysts,UNITED KINGDOM
+Not Available,Denied,10463,BAYVIEW REAL ESTATE CONSULTANTS; INCORPORATED,Cost Estimators,UNITED KINGDOM
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,PHILIPPINES
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,CANADA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,ISRAEL
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAPAN
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,SRI LANKA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,JAMAICA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
+Not Available,Denied,10003,MEDIDATA SOLUTIONS,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10013,RDA INTERNATIONAL INC,Financial Managers,NEW ZEALAND
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
 Construction,Denied,10014,TURNER CONSTRUCTION COMPANY,Construction Managers,IRELAND
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,GEORGIA
-undefined,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,INDIA
+Not Available,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,GEORGIA
+Not Available,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,INDIA
 Construction,Denied,11357,NEXTCOM CONSTRUCTION; INC.,Civil Engineers,SOUTH KOREA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Programmers,INDIA
-undefined,Denied,10309,MIRACLE TECHNOLOGIES INC.,Network and Computer Systems Administrators,PAKISTAN
+Not Available,Denied,10309,MIRACLE TECHNOLOGIES INC.,Network and Computer Systems Administrators,PAKISTAN
 Hospitality,Denied,10016,THE DINEX GROUP,Food Service Managers,FRANCE
-undefined,Denied,11101,CITADEL FOODS INC.;,Sales Managers,ITALY
+Not Available,Denied,11101,CITADEL FOODS INC.;,Sales Managers,ITALY
 IT,Denied,10016,MPHASIS CORPORATION,Computer Programmers,INDIA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10468,MONROE COLLEGE,Instructional Coordinators,JAMAICA
+Not Available,Denied,10468,MONROE COLLEGE,Instructional Coordinators,JAMAICA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Health Care,Denied,11354,ACCESS DENTAL GROUP PLLC,Graphic Designers,MALAYSIA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,BARBADOS
-undefined,Denied,11040,SQL DATA SOLUTIONS; INC.;,Computer Software Engineers; Applications,INDIA
-undefined,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Special Education Teachers; Secondary School,BARBADOS
+Not Available,Denied,11040,SQL DATA SOLUTIONS; INC.;,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,11201,NEW YORK CITY DEPARTMENT OF EDUCATION,Secondary School Teachers; Except Special and Vocational Education,PHILIPPINES
 Other Economic Sector,Denied,10014,S.R. GAMBREL; INC.,Interior Designers,CANADA
 Other Economic Sector,Denied,10001,ERMANI GROUP INC.,Market Research Analysts,RUSSIA
 IT,Denied,10016,MPHASIS CORPORATION,Sales Managers,INDIA
-undefined,Denied,10018,KIDZ CONCEPTS; LLC,Art Directors,SOUTH KOREA
+Not Available,Denied,10018,KIDZ CONCEPTS; LLC,Art Directors,SOUTH KOREA
 Other Economic Sector,Denied,11357,NY KOREAN PENTECOSTAL HOLINESS CHURCH,Audio and Video Equipment Technicians,SOUTH KOREA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10003,CHIMERA SECURITIES; LLC,Securities; Commodities; and Financial Services Sales Agents,NEPAL
+Not Available,Denied,10003,CHIMERA SECURITIES; LLC,Securities; Commodities; and Financial Services Sales Agents,NEPAL
 Construction,Denied,11378,BEST INTERIORS MANAGEMENT COMPANY; INC.,Stonemasons,POLAND
-undefined,Denied,10018,SPANISH TAVERNA RESTAURANT INC.,Cooks; Restaurant,MEXICO
-undefined,Denied,11101,ALLIEDMEDIX RESOURCES INC,Occupational Therapists,PHILIPPINES
-undefined,Denied,10018,NEX WORLDWIDE EXPRESS INC.,Operations Research Analysts,TURKEY
+Not Available,Denied,10018,SPANISH TAVERNA RESTAURANT INC.,Cooks; Restaurant,MEXICO
+Not Available,Denied,11101,ALLIEDMEDIX RESOURCES INC,Occupational Therapists,PHILIPPINES
+Not Available,Denied,10018,NEX WORLDWIDE EXPRESS INC.,Operations Research Analysts,TURKEY
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Advanced Mfg,Denied,10019,COMPONENTS BY JOHN MCCOY; INC.,Market Research Analysts,CANADA
-undefined,Denied,11375,V-SOLVE; INC.,Database Administrators,INDIA
+Not Available,Denied,11375,V-SOLVE; INC.,Database Administrators,INDIA
 Hospitality,Denied,10003,VESELKA ENTERPRISES; LTD,Food Service Managers,POLAND
 Other Economic Sector,Denied,10024,JEFFREY LEFCOURT,Maids and Housekeeping Cleaners,MEXICO
 Hospitality,Denied,10306,LA ROCCAS ITALIAN ICES & PIZZERIA,Cooks; Restaurant,MEXICO
@@ -1970,40 +1970,40 @@ Automotive,Denied,11354,35 AUTO REPAIR AND BODY SHOP; CORP.,Automotive Service T
 Finance,Denied,10019,FRIEDMAN LLP,Accountants and Auditors,CHINA
 Construction,Denied,11354,BEST CONCRETE MIX CORPORATION,Cement Masons and Concrete Finishers,ECUADOR
 Hospitality,Denied,11209,CITI YOUNG CORP.,Customer Service Representatives,MEXICO
-undefined,Denied,10019,MACQUARIE HOLDINGS (USA) INC.,Computer Software Engineers; Applications,AUSTRALIA
-undefined,Denied,10282,GOLDMAN SACHS & CO.,Accountants,SOUTH KOREA
-undefined,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,CHINA
+Not Available,Denied,10019,MACQUARIE HOLDINGS (USA) INC.,Computer Software Engineers; Applications,AUSTRALIA
+Not Available,Denied,10282,GOLDMAN SACHS & CO.,Accountants,SOUTH KOREA
+Not Available,Denied,10282,GOLDMAN; SACHS & CO.,Financial Analysts,CHINA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10017,KYLIN MANAGEMENT LLC,Financial Analysts,JAPAN
+Not Available,Denied,10017,KYLIN MANAGEMENT LLC,Financial Analysts,JAPAN
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 IT,Denied,10016,MPHASIS CORPORATION,Computer Software Engineers; Applications,INDIA
 Hospitality,Denied,10469,KAMBOUSI RESTAURANT,Cooks; Restaurant,MEXICO
 Other Economic Sector,Denied,11356,CESARE FRUIT COMPANY INC. DBA CESARE FRUIT MARKET INC.,First-Line Supervisors/Managers of Helpers; Laborers; and Material Movers; Hand,MEXICO
-undefined,Denied,10022,CENTERLINE CAPITAL GROUP,Accountants and Auditors,INDIA
-undefined,Denied,10016,SOLOMON PAGE GROUP LLC,Computer Systems Analysts,INDIA
-undefined,Denied,10010,CREDIT SUISSE SECURITIES (USA) LLC,Operations Research Analysts,INDIA
-undefined,Denied,10013,DANIEL J. EDELMAN; INC.,Public Relations Managers,SOUTH AFRICA
+Not Available,Denied,10022,CENTERLINE CAPITAL GROUP,Accountants and Auditors,INDIA
+Not Available,Denied,10016,SOLOMON PAGE GROUP LLC,Computer Systems Analysts,INDIA
+Not Available,Denied,10010,CREDIT SUISSE SECURITIES (USA) LLC,Operations Research Analysts,INDIA
+Not Available,Denied,10013,DANIEL J. EDELMAN; INC.,Public Relations Managers,SOUTH AFRICA
 Other Economic Sector,Denied,10304,BASSO LANDSCAPING INC.,Landscaping and Groundskeeping Workers,MEXICO
-undefined,Denied,10282,GOLDMAN; SACHS & CO.,Sales Agents; Securities and Commodities,CANADA
-undefined,Denied,10022,MCKINSEY & COMPANY; INC UNITED STATES,Management Analysts,MEXICO
+Not Available,Denied,10282,GOLDMAN; SACHS & CO.,Sales Agents; Securities and Commodities,CANADA
+Not Available,Denied,10022,MCKINSEY & COMPANY; INC UNITED STATES,Management Analysts,MEXICO
 Construction,Denied,11368,R.A.M.S. MECHANICAL INC.,Mechanical Engineers,PAKISTAN
-undefined,Denied,10005,DEUTSCHE BANK SECURITIES; INC.,Financial Managers; Branch or Department,BRAZIL
-undefined,Denied,10004,AMTEX SYSTEMS; INC.,Computer Software Engineers; Systems Software,INDIA
-undefined,Denied,10001,THERACARE OF NEW YORK; INC.,Occupational Therapists,PHILIPPINES
+Not Available,Denied,10005,DEUTSCHE BANK SECURITIES; INC.,Financial Managers; Branch or Department,BRAZIL
+Not Available,Denied,10004,AMTEX SYSTEMS; INC.,Computer Software Engineers; Systems Software,INDIA
+Not Available,Denied,10001,THERACARE OF NEW YORK; INC.,Occupational Therapists,PHILIPPINES
 IT,Denied,10001,MAJESCOMASTEK,Computer and Information Systems Managers,INDIA
 IT,Denied,10001,TECHNOFINA SERVICES; INC.,Database Administrators,INDIA
-undefined,Denied,10036,MORGAN STANLEY & CO. LLC,Computer Software Engineers; Applications,INDIA
-undefined,Denied,11237,DZH IMP. & EXP. INC.,Budget Analysts,CHINA
+Not Available,Denied,10036,MORGAN STANLEY & CO. LLC,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,11237,DZH IMP. & EXP. INC.,Budget Analysts,CHINA
 Other Economic Sector,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapists,PHILIPPINES
-undefined,Denied,11375,V-SOLVE; INC.,Computer Software Engineers; Applications,INDIA
-undefined,Denied,10018,AOTEXTILE,Materials Scientists,UNITED STATES OF AMERICA
-undefined,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapists,PHILIPPINES
+Not Available,Denied,11375,V-SOLVE; INC.,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10018,AOTEXTILE,Materials Scientists,UNITED STATES OF AMERICA
+Not Available,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapists,PHILIPPINES
 Finance,Denied,10022,CERBERUS CAPITAL MANAGEMENT LP,Economists,CHINA
-undefined,Denied,10013,POTION DESIGN LLC,Computer Software Engineers; Systems Software,ISRAEL
+Not Available,Denied,10013,POTION DESIGN LLC,Computer Software Engineers; Systems Software,ISRAEL
 IT,Denied,10007,VERIZON COMMUNICATIONS INC.; & ALL ITS SUBSIDIARIES & AFFILIATES,Computer Systems Analysts,INDIA
 Educational Services,Denied,11201,ASA INSTITUTE OF BUSINESS & COMPUTER TECHNOLOGY,Biological Science Teachers; Postsecondary,PAKISTAN
-undefined,Denied,10004,PROFESSIONAL ACCESS LTD,Computer Software Engineers; Applications,INDIA
+Not Available,Denied,10004,PROFESSIONAL ACCESS LTD,Computer Software Engineers; Applications,INDIA
 Other Economic Sector,Denied,10018,AMERICAN ASIA EXPRESS CORP,Logisticians,TAIWAN
 Hospitality,Denied,10013,9876 BOWERY REALTY CORP,Accountants,ISRAEL
 Educational Services,Denied,10025,NEW AMSTERDAM FENCING ACADEMY.; LLC,Coaches and Scouts,SOUTH KOREA
@@ -2056,7 +2056,7 @@ Other Economic Sector,Denied,10128,HILARY AND BARRY NESS,Childcare Workers,PHILI
 Hospitality,Denied,10065,IHMS LLC D/B/A THE PIERRE A TAJ HOTEL; NEW YORK,General and Operations Managers,GERMANY
 IT,Denied,10038,SOFTPATH SYSTEMS; INC.,Network and Computer Systems Administrators*,INDIA
 Construction,Denied,10023,BRUSCO CONTRACTING CORP,Stonemasons,MEXICO
-undefined,Denied,11101,VORDONIA CONTRACTING AND SUPPLIES CORP.,Maintenance and Repair Workers; General,ECUADOR
+Not Available,Denied,11101,VORDONIA CONTRACTING AND SUPPLIES CORP.,Maintenance and Repair Workers; General,ECUADOR
 Other Economic Sector,Denied,10018,HASKELL JEWELS; LLC,Commercial and Industrial Designers,TAIWAN
 Agribusiness,Denied,10034,PRIMOS LIVE POULTRY; INC.,Slaughterers and Meat Packers,DOMINICAN REPUBLIC
 IT,Denied,11375,AMICUS SYSTEMS; INC,Computer Systems Analysts,INDIA
@@ -2080,7 +2080,7 @@ Advanced Mfg,Denied,11205,J.B. WOODCRAFT LLC,Fine Artists; Including Painters; S
 Other Economic Sector,Denied,10010,WEIGHT WATCHERS INTERNATIONAL; INC.,Information Security Analysts; Web Developers; and Computer Network Architects,PAKISTAN
 Other Economic Sector,Denied,10017,PRICEWATERHOUSECOOPERS,Accountants and Auditors,AUSTRALIA
 Finance,Denied,10001,SAMWOO LLP,Accountants and Auditors,SOUTH KOREA
-undefined,Denied,11377,PROFESSIONAL PLACEEMENT & RECRUITMENT; INC.,Medical and Health Services Managers,SOUTH KOREA
+Not Available,Denied,11377,PROFESSIONAL PLACEEMENT & RECRUITMENT; INC.,Medical and Health Services Managers,SOUTH KOREA
 Other Economic Sector,Denied,10011,CATCH-24 ADVERTISING & DESIGN,Software Developers; Applications,JAPAN
 Transportation,Denied,11101,PARIS LIMOUSINE SERVICE CORPORATION,First-Line Supervisors/Managers of Transportation and Material-Moving Machine and Vehicle Operators,PAKISTAN
 Other Economic Sector,Denied,10016,D-BUG INC.,Software Developers; Applications,NEPAL
@@ -2097,7 +2097,7 @@ Finance,Denied,10004,U.S. FINANCIAL INVESTMENTS; INC.,Financial Analysts,CHINA
 Other Economic Sector,Denied,11421,IMPERIAL DECORATING; INC.,Upholsterers,MEXICO
 Hospitality,Denied,11104,ARRIBA ARRIBA SUNNYSIDE; INC.,Chefs and Head Cooks,MEXICO
 Other Economic Sector,Denied,10036,SWISSDIAM INTERNATIONAL LLC,Jewelers and Precious Stone and Metal Workers,SWITZERLAND
-undefined,Denied,10016,COLLECTIVE INC. D.B.A. COLLECTIVE MEDIA,Software Developers; Systems Software,INDIA
+Not Available,Denied,10016,COLLECTIVE INC. D.B.A. COLLECTIVE MEDIA,Software Developers; Systems Software,INDIA
 Construction,Denied,11203,FERRO ARTISTICO; INC. D/B/A VENEZIA IRON WORKS,Logisticians,PHILIPPINES
 Other Economic Sector,Denied,11354,BILINGUAL SEIT & PRESCHOOL INC.,Special Education Teachers; Preschool; Kindergarten; and Elementary School*,HONG KONG
 Hospitality,Denied,10001,PINE TREE HOUSE INC.,Cooks; Restaurant,SOUTH KOREA
@@ -2107,7 +2107,7 @@ Other Economic Sector,Denied,10001,SILVER PLANET INC.,Market Research Analysts a
 Finance,Denied,10001,M. A. MAHMOOD; CPA; PC,Accountants and Auditors,PAKISTAN
 Educational Services,Denied,10029,NEW YORK CENTER FOR AUTISM CHARTER SCHOOL,Teachers and Instructors; All Other*,JAPAN
 Construction,Denied,10016,ABR G.C.,Management Analysts,POLAND
-undefined,Denied,11416,JAIME RODRIGUEZ,,MEXICO
+Not Available,Denied,11416,JAIME RODRIGUEZ,,MEXICO
 Other Economic Sector,Denied,10036,R.M USA INC.,Jewelers and Precious Stone and Metal Workers,INDIA
 Health Care,Denied,11229,ALLCITY FAMILY HEALTHCARE CENTER; INC.,Architectural and Engineering Managers,EGYPT
 Advanced Mfg,Denied,10463,5247 BROADWAY DRUGS INC.,General and Operations Managers,INDIA
@@ -2126,7 +2126,7 @@ IT,Denied,10036,SYSTEC INTERNATIONAL INC,Software Developers; Systems Software,I
 IT,Denied,10014,EVERYDAY HEALTH INC,Software Developers; Applications,INDIA
 Finance,Denied,10022,BANCO DO BRASIL S A,Securities; Commodities; and Financial Services Sales Agents,BRAZIL
 Other Economic Sector,Denied,11432,EXCELLENT PEST CONTROL LLC,Pest Control Workers,INDIA
-undefined,Denied,11105,NEW YORK BEER CO.; LLC DBA JACOBS PICKLES,Marketing Managers,NEPAL
+Not Available,Denied,11105,NEW YORK BEER CO.; LLC DBA JACOBS PICKLES,Marketing Managers,NEPAL
 Finance,Denied,10036,S.W.I.F.T. PAN-AMERICAS; INC.,Computer and Information Systems Managers,NETHERLANDS
 Health Care,Denied,11372,MENTAL HEALTH PROVIDERS OF WESTERN QUEENS; INC.,Mental Health and Substance Abuse Social Workers,PERU
 Hospitality,Denied,11372,COAMEX RESTAURANT INC.,Cooks; Restaurant,MEXICO
@@ -2138,9 +2138,9 @@ Other Economic Sector,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapist
 Other Economic Sector,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapists,PHILIPPINES
 Other Economic Sector,Denied,10018,RCM TECHNOLOGIES; INC.,Occupational Therapists,PHILIPPINES
 Finance,Denied,10282,GOLDMAN; SACHS & CO.,Financial Managers,CANADA
-undefined,Denied,10001,GLOBAL WORKS GROUP LLC,Marketing Managers,SPAIN
+Not Available,Denied,10001,GLOBAL WORKS GROUP LLC,Marketing Managers,SPAIN
 Other Economic Sector,Denied,10036,THOMSON REUTERS MARKETS LLC,Software Developers; Applications,INDIA
-undefined,Denied,11220,MARLIN REALTY INC.,Carpenters,URUGUAY
+Not Available,Denied,11220,MARLIN REALTY INC.,Carpenters,URUGUAY
 Finance,Denied,10022,COPAL PARTNERS U.S. INC.,Statisticians,CHINA
 Construction,Denied,11101,L&M AIR INC,Civil Engineers,INDIA
 Educational Services,Denied,10031,THE CITY COLLEGE OF NEW YORK,Philosophy and Religion Teachers; Postsecondary,PERU
@@ -2153,7 +2153,7 @@ Other Economic Sector,Denied,10014,PR NEWSWIRE ASSOCIATION LLC,Information Secur
 Health Care,Denied,11234,DOCTORS CARDIO-VASCULAR IMAGING; P.C.,Secretaries and Administrative Assistants; Except Legal; Medical; and Executive,ROMANIA
 Other Economic Sector,Denied,11213,CHRIST LIFE MINISTRIES INC.,Secretaries and Administrative Assistants; Except Legal; Medical; and Executive,NIGERIA
 Retail,Denied,11354,BREAD CAKE & COFFEE; INC.,Chefs and Head Cooks,ECUADOR
-undefined,Denied,11418,BEST COFFEE HOUSE; INC.,Cooks; Fast Food,MEXICO
+Not Available,Denied,11418,BEST COFFEE HOUSE; INC.,Cooks; Fast Food,MEXICO
 Aerospace,Denied,10003,REYNALDO C. PREGO; P.E. CONSULTING ENGINEERS,Electrical Engineers,PHILIPPINES
 Hospitality,Denied,10314,HASHMI ENT.; INC.,First-Line Supervisors of Food Preparation and Serving Workers,MEXICO
 Hospitality,Denied,10016,GGS FOOD CORP D/B/A CURRY EXPRESS,Cooks; Restaurant,INDIA
@@ -2169,9 +2169,9 @@ Construction,Denied,11367,FENSTE; INC.,First-Line Supervisors of Helpers; Labore
 Advanced Mfg,Denied,10018,COCKPIT USA INC.,Accountants and Auditors,GERMANY
 Finance,Denied,10005,DEUTSCHE BANK,Computer Systems Analysts,INDIA
 Retail,Denied,10453,SHOPLAND DISCOUNT,,GUINEA
-undefined,Denied,10006,SYSCOM (USA) INC.,Information Security Analysts; Web Developers; and Computer Network Architects,JAPAN
-undefined,Denied,10006,SYSCOM (USA) INC.,Computer Systems Analysts,JAPAN
-undefined,Denied,10036,FIVE & ONE; INC. DBA FRANKIE & JOHNNIES RESTAURAN,Cooks; Restaurant,ECUADOR
+Not Available,Denied,10006,SYSCOM (USA) INC.,Information Security Analysts; Web Developers; and Computer Network Architects,JAPAN
+Not Available,Denied,10006,SYSCOM (USA) INC.,Computer Systems Analysts,JAPAN
+Not Available,Denied,10036,FIVE & ONE; INC. DBA FRANKIE & JOHNNIES RESTAURAN,Cooks; Restaurant,ECUADOR
 Other Economic Sector,Withdrawn,11203,VICTORY ASSEMBLY,Self-Enrichment Education Teachers,GUYANA
 Advanced Mfg,Withdrawn,10018,TAKEOUT INC,Fashion Designers,SOUTH KOREA
 Finance,Withdrawn,10282,GOLDMAN; SACHS & CO.,Financial Analysts,INDIA
@@ -2216,7 +2216,7 @@ Other Economic Sector,Withdrawn,11354,M-TOUCH INTERNATIONAL; INC,Operations Rese
 Finance,Withdrawn,10036,METLIFE GROUP; INC.,Actuaries,CANADA
 Finance,Withdrawn,10018,HSBC SECURITIES (USA) INC.,Software Developers; Applications,POLAND
 Other Economic Sector,Withdrawn,10012,CHAMELEON COMMUNICATIONS INTERNATIONAL INC,Public Relations Specialists,UNITED KINGDOM
-undefined,Withdrawn,10001,DM SERVICES; INC.,Market Research Analysts and Marketing Specialists*,ARGENTINA
+Not Available,Withdrawn,10001,DM SERVICES; INC.,Market Research Analysts and Marketing Specialists*,ARGENTINA
 Finance,Withdrawn,10271,TOWER INSURANCE COMPANY OF NEW YORK,Database Administrators,INDIA
 Finance,Withdrawn,10019,CREDIT AGRICOLE SECURITIES (USA) INC.,Software Developers; Applications,INDIA
 Finance,Withdrawn,10010,CREDIT SUISSE SECURITIES (USA) LLC,Economists,SWITZERLAND
@@ -2272,7 +2272,7 @@ Retail,Withdrawn,10457,JOLIN PHARMACY,Chemists,INDIA
 Finance,Withdrawn,10022,CITIBANK; N.A,Software Developers; Applications,INDIA
 Other Economic Sector,Withdrawn,10017,PRICEWATERHOUSECOOPERS,Operations Research Analysts,UNITED KINGDOM
 Finance,Withdrawn,10065,BC PARTNERS INC,Management Analysts,UNITED KINGDOM
-undefined,Withdrawn,10011,YIPIT; INC.,Software Developers; Applications,INDIA
+Not Available,Withdrawn,10011,YIPIT; INC.,Software Developers; Applications,INDIA
 Other Economic Sector,Withdrawn,10004,CONNEX INTERNATIONAL; LLC,Sales Managers,UNITED KINGDOM
 Other Economic Sector,Withdrawn,10014,SAATCHI & SAATCHI NORTH AMERICA INC.,Public Relations and Fundraising Managers,UNITED KINGDOM
 Other Economic Sector,Withdrawn,10021,SIMMONS HOUSEHOLD,First-Line Supervisors of Housekeeping and Janitorial Workers,THAILAND
@@ -2280,7 +2280,7 @@ Hospitality,Withdrawn,10019,ADNY; INC.,Food Service Managers,FRANCE
 Other Economic Sector,Withdrawn,10013,KIRSHENBAUM BOND + PARTNERS LLC,Graphic Designers,MEXICO
 Finance,Withdrawn,10017,KISO & TANAKA; LLP,Accountants and Auditors,JAPAN
 Health Care,Withdrawn,11375,BILINGUALS INC.,Special Education Teachers; Preschool; Kindergarten; and Elementary School*,PERU
-undefined,Withdrawn,10003,MEDIDATA SOLUTIONS,Marketing Managers,INDIA
+Not Available,Withdrawn,10003,MEDIDATA SOLUTIONS,Marketing Managers,INDIA
 IT,Withdrawn,10018,BAHA INDUSTRIES CORP. DBA OPEN SYSTEMS TECHNOLOGIES,Computer Systems Analysts,INDIA
 Finance,Withdrawn,10019,MACQUARIE HOLDINGS (USA) INC.,Accountants and Auditors,AUSTRALIA
 IT,Withdrawn,10004,IPSOFT INCORPORATED,Software Developers; Applications,INDIA

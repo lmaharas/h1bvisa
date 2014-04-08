@@ -26,14 +26,10 @@ function aggregateByCountryAll(){
 			visasByCountryAll[currentCountry].push(currentCountry)
 		}
 	}
-	console.log("visasbycountryall",visasByCountryAll)
 	for(country in visasByCountryAll){
-		console.log(country)
 		var countryCount = visasByCountryAll[country].length
-		console.log(countryCount)
 		countryCountAll.push([country, countryCount])
 	}
-	console.log(countryCountAll)
 	redrawMap(countryCountAll)
 	return countryCountAll
 }
@@ -48,7 +44,7 @@ function aggregateByCountry(country){
 		var countryTotal = visasTargetCountry.length;
 	}
 	//console.log(visasByCountry)
-	
+	return visasTargetCountry
 	var countryBySector = 
 		{
 		    "IT":[],
@@ -57,7 +53,7 @@ function aggregateByCountry(country){
 		    "Educational Services":[],
 		    "Finance":[],
 		    "Health Care":[],
-			"undefined":[],
+			"Not Available":[],
 		    "Aerospace":[],
 		    "Retail":[],
 		    "Hospitality":[],
@@ -82,6 +78,7 @@ function aggregateByCountry(country){
 		}
 	}
 	//console.log(country, countryBySector)
+	return visasTargetCountry
 }
 aggregateByCountry("CHINA")
 // function aggregateBySectorAndStatus(Sector, Status){
@@ -120,7 +117,7 @@ aggregateByCountry("CHINA")
 // 		    "Educational Services":[],
 // 		    "Finance":[],
 // 		    "Health Care":[],
-// 			"undefined":[],
+// 			"Not Available":[],
 // 		    "Aerospace":[],
 // 		    "Retail":[],
 // 		    "Hospitality":[],
@@ -227,7 +224,13 @@ function generateAggregatedText(Sector){
 	}
 //	console.log(sectorByCompany.length)
 	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
-	var printedString = "This sector contains applications for " + sectorByTitle
+	if(sectorByTitle.length<1){
+		var printedString = "This sector contains no applications."
+		
+	}else{
+		var printedString = "This sector contains applications for " + sectorByTitle
+		
+	}
 //	console.log("title",sectorByTitle)
 	//return  printedString
 	return printedString
@@ -239,13 +242,13 @@ function generateAggregatedText(Sector){
 function drawBarGraph(dataset){
 	var bySector = 
 		{
+			"Other Economic Sector":[],
+		    "Finance":[],
 		    "IT":[],
-		    "Other Economic Sector":[],
+			"Not Available":[],
+		    "Health Care":[],
 		    "Advanced Mfg":[],
 		    "Educational Services":[],
-		    "Finance":[],
-		    "Health Care":[],
-			"undefined":[],
 		    "Aerospace":[],
 		    "Retail":[],
 		    "Hospitality":[],
@@ -289,9 +292,8 @@ function drawBarGraph(dataset){
 			dCount = bySector[sector]["Denied"].length
 		}
 		sectorStats.push([sector, cCount,wCount,dCount])
-
 	}
-	
+	//sectorStats.sort()
 	//console.log(sectorStats)
 	var w = 400;
 	var h = 400;
@@ -301,10 +303,13 @@ function drawBarGraph(dataset){
 		.attr("width", h)
 		.attr("height", w)
 		.append("svg:g")
+		.attr("class", "svg")
+		
 		//.attr("transform", "translate(0,400)")
 		.attr("transform", "rotate(90 0 0)");
 	var svg2 = d3.select("div.barchart")
 		.append("svg:svg")
+		.attr("class", "svg2")
 		.attr("width", 120)
 		.attr("height", h)
 		.append("svg:g");
@@ -334,10 +339,12 @@ function drawBarGraph(dataset){
 	            .data(stacked)
 	            .enter()
 				.append("svg:g")
+				.attr("class", "bargraph")
+				
 	            .attr("class", "valgroup")
 	            .style("fill", function(d, i) { return z(i); });
 				
-	var rect = valgroup.selectAll("rect")
+	var rect = valgroup.selectAll("rect")	
 	            .data(function(d){return d;})
 	            .enter()
 				.append("svg:rect")
@@ -372,7 +379,6 @@ function drawBarGraph(dataset){
 	.data(sectorStats)
 	.enter()
 	.append("svg:g")
-	.attr("class", "barLabel")
 	.append("text")
 	.text(function(d){return d[0]})
 	.attr("font-size", "10px")
@@ -386,12 +392,14 @@ function drawBarGraph(dataset){
 	.on('mouseover', function(d,i){
 		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
 		var totalPercent = parseInt(total/2340*100)
-		if (totalPercent < 0){
+		if (totalPercent < 1){
 			totalPercent = " less than 1"
 		}
 		d3.selectAll('#barHighlight')
 			.html(sectorStats[i][0]+"- "+ total + " visas, or "+totalPercent+"% of all visas");
 		d3.select(this).attr("opacity", 1);
+		d3.selectAll('#visaDetails').html("")
+		
 	})
 	.on("click", function(d,i){
 		var currentSector = sectorStats[i][0]
@@ -399,6 +407,8 @@ function drawBarGraph(dataset){
 		var selectedDetails = aggregateBySector(currentSector)
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText))
+		d3.selectAll('#countryLabel').html(currentSector)
+		
 		d3.select(".svg3")
 		.attr("opacity", 1)
 		.transition()
@@ -450,17 +460,37 @@ function redrawMap(countryCount) {
 	//.style("stroke", "#fff")
 	.style("fill", function(d){
 		var value = d.properties.value;
-		console.log(d.properties.name, value)
+		if(d.properties.name == "United States"){
+			return "#fff"
+		}
 		if(value){
 			return color(value);
 		}else{
-			return "#efefef";
+			return "#fff";
 		}
+		
+	})
+	.style("stroke", function(d){
+		if(d.properties.name == "United States"){
+			return "#aaa"
+		}
+	})
+	.on("mouseover", function(d,i){
+		var mouseOverCountry = d.properties.name
+		d3.selectAll('#countryLabel').html(mouseOverCountry)
+	})
+	.on("click", function(d,i){
+		var country = d.properties.name
+		var dataset = aggregateByCountry(country.toUpperCase())
+		console.log(dataset)
+		d3.selectAll(".svg").remove();
+		d3.selectAll(".svg2").remove();
+		drawBarGraph(dataset);
 	})
 	.attr("opacity", 0)
 	.transition()
 	.duration(1000)
-	.attr("opacity", 1);	
+	.attr("opacity", 1)
 	})
 }
 
