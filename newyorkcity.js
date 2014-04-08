@@ -1,5 +1,5 @@
 var visas = []
-d3.csv("/reduced_data/h1b_newyork.csv", function(data)
+d3.csv("reduced_data/h1b_newyork.csv", function(data)
 	{
 	//	console.log(data);
 		for(visa in data){
@@ -30,7 +30,7 @@ function aggregateByCountryAll(){
 		var countryCount = visasByCountryAll[country].length
 		countryCountAll.push([country, countryCount])
 	}
-	redrawMap(countryCountAll)
+	redrawMap(countryCountAll, "#665D50");
 	return countryCountAll
 }
 
@@ -80,31 +80,38 @@ function aggregateByCountry(country){
 	//console.log(country, countryBySector)
 	return visasTargetCountry
 }
-aggregateByCountry("CHINA")
-// function aggregateBySectorAndStatus(Sector, Status){
-// 	//function that organizes selected sector and status by country
-// 	console.log("sector/status")
-// 	var visasTargetSectorStatus = []
-// 	for (visa in visas){		
-// 		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
-// 			visasTargetSectorStatus.push(visas[visa])
-// 		}
-// 	}
-// 	console.log("hightlighted visas: ", visasTargetSectorStatus)
-// 	var visasBySectorStatus = []
-// 	for (visa in visasTargetSectorStatus){	
-// 		var currentCountry = visasTargetSectorStatus[visa]["Origin Country"];
-// 		if(visasBySectorStatus[currentCountry]==undefined){
-// 			visasBySectorStatus[currentCountry]=[]
-// 			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
-// 		}
-// 		else{
-// 			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
-// 		}
-// 	}	
-// 	console.log(visasBySectorStatus)
-// 	return visasBySectorStatus
-// }
+
+function aggregateBySectorAndStatus(Sector, Status){
+	//function that organizes selected sector and status by country
+	console.log("sector/status")
+	var visasTargetSectorStatus = []
+	for (visa in visas){		
+		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
+			visasTargetSectorStatus.push(visas[visa])
+		}
+	}
+	console.log("hightlighted visas: ", visasTargetSectorStatus)
+	var visasBySectorStatus = {}
+	for (visa in visasTargetSectorStatus){	
+		var currentCountry = visasTargetSectorStatus[visa]["Origin Country"];
+		if(visasBySectorStatus[currentCountry]==undefined){
+			visasBySectorStatus[currentCountry]=[]
+			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+		}
+		else{
+			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+		}
+	}	
+	countryCount = []
+	for (visa in visasBySectorStatus){
+		var currentCountrySize= visasBySectorStatus[visa].length
+		countryCount.push([visa,currentCountrySize])
+		//console.log(countryCount)
+	}
+	return countryCount
+	console.log(visasBySectorStatus)
+	return countryCount
+}
 
 // function aggregatebySectorThenStatus(){
 // 	//function that organizes by each sector and then by each status
@@ -317,9 +324,9 @@ function drawBarGraph(dataset){
 	p = [0, 50, 30, 20],
     x = d3.scale.ordinal().rangeRoundBands([0, w-20]),
     y = d3.scale.linear().range([0, h-140]),
-    z = d3.scale.ordinal().range(["#59D984","#EDA52B","#E63D25",])
+    z = d3.scale.ordinal().range(["#59D984","#EDA52B","#E63D25"]);
 	
-	var remapped = ["c", "w", "d"].map(function(dat,i){
+	var remapped = ["Certified", "Withdrawn", "Denied"].map(function(dat,i){
 		//console.log(dat)
 		return sectorStats.map(function(d, ii){
 			return {x:ii, y: d[i+1], type: dat}
@@ -340,7 +347,6 @@ function drawBarGraph(dataset){
 	            .enter()
 				.append("svg:g")
 				.attr("class", "bargraph")
-				
 	            .attr("class", "valgroup")
 	            .style("fill", function(d, i) { return z(i); });
 				
@@ -370,10 +376,24 @@ function drawBarGraph(dataset){
 					var currentSector = sectorStats[i][0]
 					//TODO: find clicked on column, and pass into function for filtering
 					//var Status = d3.select(this).property(i)
-					var Status = "Denied"
+					var Status = d.type
 					var selectedDetails = aggregateBySectorAndStatus(currentSector, Status)
-					d3.selectAll('#visaDetails').html(selectedDetails)
-				});
+					d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails));
+					d3.selectAll('#countryLabel').html(currentSector + " " +Status)
+					
+					d3.select(".svg3").attr("opacity", 1)
+					.transition()
+					.duration(1000)
+					.attr("opacity", 0)
+					.remove();
+					if(d.type == "Certified"){
+					redrawMap(countryCount,"#59D984");	
+					}else if(d.type == "Withdrawn"){
+					redrawMap(countryCount, "#EDA52B");		
+					}else{
+					redrawMap(countryCount, "#E63D25");	
+					}
+			});
 				
 	svg2.selectAll("text")
 	.data(sectorStats)
@@ -407,7 +427,7 @@ function drawBarGraph(dataset){
 		var selectedDetails = aggregateBySector(currentSector)
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText))
-		d3.selectAll('#countryLabel').html(currentSector)
+		d3.selectAll('#countryLabel').html(currentSector+" All Status")
 		
 		d3.select(".svg3")
 		.attr("opacity", 1)
@@ -415,11 +435,11 @@ function drawBarGraph(dataset){
 		.duration(1000)
 		.attr("opacity", 0)
 		.remove()
-		redrawMap(countryCount);
+		redrawMap(countryCount, "#665D50");
 	})
 };
 
-function redrawMap(countryCount) {
+function redrawMap(countryCount, maxColor) {
 	var width = 800;
 	var height = 400;	
 	var countByCountry = d3.map();
@@ -436,7 +456,7 @@ function redrawMap(countryCount) {
 		.attr("height", height)
 		.append("svg:g");	
 	var color = d3.scale.sqrt()
-		.range(["#efefef", "#665D50"])
+		.range(["#efefef", maxColor])
 	d3.json("world.geojson", function(json){
 		var dataValues = []
 	for(var i = 0; i < countryCount.length; i++){
