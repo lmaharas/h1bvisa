@@ -124,6 +124,7 @@ function aggregateByCountry(country){
 // 	//console.log(bySector)
 // 	return(bySector)
 // }
+var countryCount = []
 
 function aggregateBySector(Sector){
 	//function that organizes selected sector and status by country
@@ -146,13 +147,13 @@ function aggregateBySector(Sector){
 			visasBySector[currentCountry].push(visasTargetSector[visa])
 		}
 	}
-	console.log(visasBySector["Origin Country"])
+	//console.log(visasBySector["Origin Country"])
 	//count by country
-	var countryCount = []
+	countryCount = []
 	for (visa in visasBySector){
 		var currentCountrySize= visasBySector[visa].length
 		countryCount.push([visa,currentCountrySize])
-		console.log(countryCount)
+		//console.log(countryCount)
 	}
 	
 	//sort by title for output text
@@ -169,7 +170,6 @@ function aggregateBySector(Sector){
 			sectorByTitle.push(currentTitle)
 			//console.log(currentTitle)
 			//console.log(sectorByTitle, "not in array")
-			
 		}
 	}
 	for (visa in visasTargetSector){
@@ -180,10 +180,11 @@ function aggregateBySector(Sector){
 			sectorByCompany.push(currentCompany)
 		}
 	}
-	console.log(sectorByCompany.length)
+//	console.log(sectorByCompany.length)
 	var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
-	console.log("title",sectorByTitle)
-	return  printedString
+//	console.log("title",sectorByTitle)
+	//return  printedString
+	return countryCount
 }
 
 function drawBarGraph(dataset){
@@ -242,7 +243,7 @@ function drawBarGraph(dataset){
 
 	}
 	
-	console.log(sectorStats)
+	//console.log(sectorStats)
 	var w = 400;
 	var h = 400;
 	
@@ -346,6 +347,8 @@ function drawBarGraph(dataset){
 		
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails))
+		d3.selectAll("svg3").remove();
+		drawMap();
 	})
 };
 
@@ -363,17 +366,41 @@ function drawMap() {
 		.append("svg:svg")
 		.attr("width", width)
 		.attr("height", height)
-		.append("svg:g");
+		.append("svg:g");	
+	var color = d3.scale.linear()
+		.range(["#ddd", "red"])
 		
 	d3.json("world.geojson", function(json){
+		var dataValues = []
 		
-		svg3.selectAll("path")
-		.data(json.features)
-		.enter()
-		.append("path")
-		.attr("d", path);
+	for(var i = 0; i < countryCount.length; i++){
+		var dataCountry = countryCount[i][0].toLowerCase();
+		var dataValue = countryCount[i][1];
+		dataValues.push(dataValue);
+		for(var j = 0; j < json.features.length; j++){
+			var jsonCountry = json.features[j].properties.name.toLowerCase();
+			if(dataCountry == jsonCountry){
+				json.features[j].properties.value = dataValue;
+				break;
+			}
+		}
+	}
+	color.domain([0,d3.max(dataValues)])
+	svg3.selectAll("path")
+	.data(json.features)
+	.enter()
+	.append("path")
+	.attr("d", path)
+	.style("stroke", "#fff")
+	.style("fill", function(d){
+		var value = d.properties.value;
+		if(value){
+			console.log(value, color(value))
+			return color(value);
+		}else{
+			return "#ddd";
+		}
+	});	
 	})
-	//console.log("drawMap function")
 }
 
-drawMap();
