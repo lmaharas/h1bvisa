@@ -61,81 +61,80 @@ function aggregateByCountry(country){
 	console.log(countryBySector)
 }
 
-function aggregateBySectorAndStatus(Sector, Status){
-	//function that organizes selected sector and status by country
-	console.log("sector/status")
-	var visasTargetSectorStatus = []
-	for (visa in visas){		
-		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
-			visasTargetSectorStatus.push(visas[visa])
-		}
-	}
-	console.log("hightlighted visas: ", visasTargetSectorStatus)
-	var visasBySectorStatus = []
-	for (visa in visasTargetSectorStatus){	
-		var currentCountry = visasTargetSectorStatus[visa]["Origin Country"];
-		if(visasBySectorStatus[currentCountry]==undefined){
-			visasBySectorStatus[currentCountry]=[]
-			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
-		}
-		else{
-			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
-		}
-	}	
-	console.log(visasBySectorStatus)
-	return visasBySectorStatus
-}
+// function aggregateBySectorAndStatus(Sector, Status){
+// 	//function that organizes selected sector and status by country
+// 	console.log("sector/status")
+// 	var visasTargetSectorStatus = []
+// 	for (visa in visas){		
+// 		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
+// 			visasTargetSectorStatus.push(visas[visa])
+// 		}
+// 	}
+// 	console.log("hightlighted visas: ", visasTargetSectorStatus)
+// 	var visasBySectorStatus = []
+// 	for (visa in visasTargetSectorStatus){	
+// 		var currentCountry = visasTargetSectorStatus[visa]["Origin Country"];
+// 		if(visasBySectorStatus[currentCountry]==undefined){
+// 			visasBySectorStatus[currentCountry]=[]
+// 			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+// 		}
+// 		else{
+// 			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+// 		}
+// 	}	
+// 	console.log(visasBySectorStatus)
+// 	return visasBySectorStatus
+// }
 
-function aggregatebySectorThenStatus(){
-	//function that organizes by each sector and then by each status
-	//format: sector, # certified, # withdrawn, # denied
-	var bySector = 
-		{
-		    "IT":[],
-		    "Other Economic Sector":[],
-		    "Advanced Mfg":[],
-		    "Educational Services":[],
-		    "Finance":[],
-		    "Health Care":[],
-			"undefined":[],
-		    "Aerospace":[],
-		    "Retail":[],
-		    "Hospitality":[],
-		    "Construction":[],
-		    "Energy":[],
-		    "Automotive":[],
-		    "Transportation":[],
-		    "Agribusiness":[],
-		    "Biotechnology":[],
-		    "Geospatial":[],
-		    "Homeland Security":[]
-		}
-	for (visa in visas){
-		//console.log(visasByCountry[visa]["Economic Sector"])
-		var currentSector = visas[visa]["Economic Sector"];
-		var currentStatus = visas[visa]["Status"];
-		if(bySector[currentSector][currentStatus]==undefined){
-			bySector[currentSector][currentStatus]=[]
-			bySector[currentSector][currentStatus].push(visas[visa])
-		}else{
-			bySector[currentSector][currentStatus].push(visas[visa])
-		}
-	}
-	//console.log(bySector)
-	return(bySector)
-	
-}
+// function aggregatebySectorThenStatus(){
+// 	//function that organizes by each sector and then by each status
+// 	//format: sector, # certified, # withdrawn, # denied
+// 	var bySector = 
+// 		{
+// 		    "IT":[],
+// 		    "Other Economic Sector":[],
+// 		    "Advanced Mfg":[],
+// 		    "Educational Services":[],
+// 		    "Finance":[],
+// 		    "Health Care":[],
+// 			"undefined":[],
+// 		    "Aerospace":[],
+// 		    "Retail":[],
+// 		    "Hospitality":[],
+// 		    "Construction":[],
+// 		    "Energy":[],
+// 		    "Automotive":[],
+// 		    "Transportation":[],
+// 		    "Agribusiness":[],
+// 		    "Biotechnology":[],
+// 		    "Geospatial":[],
+// 		    "Homeland Security":[]
+// 		}
+// 	for (visa in visas){
+// 		//console.log(visasByCountry[visa]["Economic Sector"])
+// 		var currentSector = visas[visa]["Economic Sector"];
+// 		var currentStatus = visas[visa]["Status"];
+// 		if(bySector[currentSector][currentStatus]==undefined){
+// 			bySector[currentSector][currentStatus]=[]
+// 			bySector[currentSector][currentStatus].push(visas[visa])
+// 		}else{
+// 			bySector[currentSector][currentStatus].push(visas[visa])
+// 		}
+// 	}
+// 	//console.log(bySector)
+// 	return(bySector)
+// }
 
 function aggregateBySector(Sector){
 	//function that organizes selected sector and status by country
-	console.log("sector")
+	//console.log("sector")
 	var visasTargetSector = []
 	for (visa in visas){		
 		if (visas[visa]["Economic Sector"] == Sector){
 			visasTargetSector.push(visas[visa])
 		}
 	}
-	console.log("hightlighted visas: ", visasTargetSector)
+	//console.log("hightlighted visas: ", visasTargetSector)
 	var visasBySector = {}
 	for (visa in visasTargetSector){	
 		var currentCountry = visasTargetSector[visa]["Origin Country"];
@@ -148,29 +147,44 @@ function aggregateBySector(Sector){
 		}
 	}
 	console.log(visasBySector["Origin Country"])
-	//sort by country
+	//count by country
+	var countryCount = []
+	for (visa in visasBySector){
+		var currentCountrySize= visasBySector[visa].length
+		countryCount.push([visa,currentCountrySize])
+		console.log(countryCount)
+	}
+	
+	//sort by title for output text
 	var sectorByTitle = []
 	var sectorByCompany = []
 	for (visa in visasTargetSector){
 		var currentTitle = visasTargetSector[visa]["Job Title"];
-		if(visasBySector[currentTitle] in sectorByTitle){
-			sectorByTitle[currentTitle].push(visasTargetSector[visa]["Job Title"])
+		if(sectorByTitle.indexOf(currentTitle) > -1){
+			//console.log(currentTitle)
+			//console.log(sectorByTitle, "in array")
+			//do nothing
 		}
 		else{
-			sectorByTitle.push(visasTargetSector[visa]["Job Title"])
+			sectorByTitle.push(currentTitle)
+			//console.log(currentTitle)
+			//console.log(sectorByTitle, "not in array")
+			
 		}
 	}
 	for (visa in visasTargetSector){
 		var currentCompany = visasTargetSector[visa]["Company"]
-		sectorByCompany.push(currentCompany)
+		if (sectorByCompany.indexOf(currentCompany)> -1){
+			//do nothing
+		}else{
+			sectorByCompany.push(currentCompany)
+		}
 	}
-	
+	console.log(sectorByCompany.length)
 	var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
 	console.log("title",sectorByTitle)
 	return  printedString
 }
-
-
 
 function drawBarGraph(dataset){
 	var bySector = 
@@ -336,6 +350,20 @@ function drawBarGraph(dataset){
 };
 
 function drawMap() {
+	var width = 800;
+	var height = 600;
+	var countByCountry = d3.map();
+	var svg3 = d3.select("div.map")
+		.append("svg:svg")
+		.attr("width", width)
+		.attr("height", height)
+		.append("svg:g");
+	d3.json("world.geojson", function(collection) {
+	  d3.select("svg").selectAll("path")
+	      .data(collection.features)
+	    .enter().append("path")
+	      .attr("d", d3.geo.path().projection(d3.geo.mercator()));
+	});
 	//console.log("drawMap function")
 }
 
