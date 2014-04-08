@@ -353,17 +353,26 @@ function drawMap() {
 	var width = 800;
 	var height = 600;
 	var countByCountry = d3.map();
+	var projection = d3.geo.mercator()
+	    .scale(120)
+	    .translate([width / 2, height / 2]);
+	var path = d3.geo.path()
+	    .projection(projection);
+		
 	var svg3 = d3.select("div.map")
 		.append("svg:svg")
 		.attr("width", width)
 		.attr("height", height)
 		.append("svg:g");
-	d3.json("world.geojson", function(collection) {
-	  d3.select("svg").selectAll("path")
-	      .data(collection.features)
-	    .enter().append("path")
-	      .attr("d", d3.geo.path().projection(d3.geo.mercator()));
-	});
+		
+	d3.json("world.geojson", function(json){
+		
+		svg3.selectAll("path")
+		.data(json.features)
+		.enter()
+		.append("path")
+		.attr("d", path);
+	})
 	//console.log("drawMap function")
 }
 
