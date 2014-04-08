@@ -9,11 +9,34 @@ d3.csv("/reduced_data/h1b_newyork.csv", function(data)
 		//aggregateBySectorAndStatus("Retail", "Denied")
 		//aggregatebySectorThenStatus();
 		drawBarGraph(data)
-		console.log(visas)
+		//console.log(visas)
+		aggregateByCountryAll();
 		return visas
-		
 	}
 )
+function aggregateByCountryAll(){
+	var visasByCountryAll=[]
+	var countryCountAll = []
+	for(visa in visas){
+		var currentCountry = visas[visa]["Origin Country"]
+		if (visasByCountryAll[currentCountry] == undefined){
+			visasByCountryAll[currentCountry] = []
+			visasByCountryAll[currentCountry].push(currentCountry)
+		}else{
+			visasByCountryAll[currentCountry].push(currentCountry)
+		}
+	}
+	console.log("visasbycountryall",visasByCountryAll)
+	for(country in visasByCountryAll){
+		console.log(country)
+		var countryCount = visasByCountryAll[country].length
+		console.log(countryCount)
+		countryCountAll.push([country, countryCount])
+	}
+	console.log(countryCountAll)
+	redrawMap(countryCountAll)
+	return countryCountAll
+}
 
 function aggregateByCountry(country){
 	//function that organize selected country's visas by sector, then status
@@ -58,9 +81,9 @@ function aggregateByCountry(country){
 			countryBySector[currentSector][currentStatus].push(visasTargetCountry[visa])
 		}
 	}
-	console.log(countryBySector)
+	//console.log(country, countryBySector)
 }
-
+aggregateByCountry("CHINA")
 // function aggregateBySectorAndStatus(Sector, Status){
 // 	//function that organizes selected sector and status by country
 // 	console.log("sector/status")
@@ -127,7 +150,7 @@ function aggregateByCountry(country){
 var countryCount = []
 
 function aggregateBySector(Sector){
-	//function that organizes selected sector and status by country
+	//function that organizes selected sector and status by country and returns country
 	//console.log("sector")
 	var visasTargetSector = []
 	for (visa in visas){		
@@ -155,8 +178,30 @@ function aggregateBySector(Sector){
 		countryCount.push([visa,currentCountrySize])
 		//console.log(countryCount)
 	}
-	
-	//sort by title for output text
+	return countryCount
+}
+
+
+function generateAggregatedText(Sector){
+	//function that outputs job title and company for bargraph selections
+	//console.log("sector")
+	var visasTargetSector = []
+	for (visa in visas){		
+		if (visas[visa]["Economic Sector"] == Sector){
+			visasTargetSector.push(visas[visa])
+		}
+	}
+	var visasBySector = {}
+	for (visa in visasTargetSector){	
+		var currentCountry = visasTargetSector[visa]["Origin Country"];
+		if(visasBySector[currentCountry]==undefined){
+			visasBySector[currentCountry]=[]
+			visasBySector[currentCountry].push(visasTargetSector[visa])
+		}
+		else{
+			visasBySector[currentCountry].push(visasTargetSector[visa])
+		}
+	}
 	var sectorByTitle = []
 	var sectorByCompany = []
 	for (visa in visasTargetSector){
@@ -181,11 +226,15 @@ function aggregateBySector(Sector){
 		}
 	}
 //	console.log(sectorByCompany.length)
-	var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
+	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
+	var printedString = "This sector contains applications for " + sectorByTitle
 //	console.log("title",sectorByTitle)
 	//return  printedString
-	return countryCount
+	return printedString
 }
+
+
+
 
 function drawBarGraph(dataset){
 	var bySector = 
@@ -247,14 +296,14 @@ function drawBarGraph(dataset){
 	var w = 400;
 	var h = 400;
 	
-	var svg = d3.select("body")
+	var svg = d3.select("div.barchart")
 		.append("svg:svg")
 		.attr("width", h)
 		.attr("height", w)
 		.append("svg:g")
 		//.attr("transform", "translate(0,400)")
 		.attr("transform", "rotate(90 0 0)");
-	var svg2 = d3.select("body")
+	var svg2 = d3.select("div.barchart")
 		.append("svg:svg")
 		.attr("width", 120)
 		.attr("height", h)
@@ -264,10 +313,11 @@ function drawBarGraph(dataset){
     x = d3.scale.ordinal().rangeRoundBands([0, w-20]),
     y = d3.scale.linear().range([0, h-140]),
     z = d3.scale.ordinal().range(["#59D984","#EDA52B","#E63D25",])
-		
+	
 	var remapped = ["c", "w", "d"].map(function(dat,i){
+		//console.log(dat)
 		return sectorStats.map(function(d, ii){
-			return {x:ii, y: d[i+1]}
+			return {x:ii, y: d[i+1], type: dat}
 		})
 	})
 	//console.log("mapped: ",remapped)
@@ -324,55 +374,61 @@ function drawBarGraph(dataset){
 	.append("svg:g")
 	.attr("class", "barLabel")
 	.append("text")
-	.text(function(d){console.log(d[0]);return d[0]})
+	.text(function(d){return d[0]})
 	.attr("font-size", "10px")
 	.attr("text-anchor", "end")
 	.attr("x", function(d,i){
 		return 112;
 	})
 	.attr("y", function(d,i){ 
-		return 22+i*(w/sectorStats.length-2)
+		return 20+i*(w/sectorStats.length-2)
 	})
 	.on('mouseover', function(d,i){
 		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
 		var totalPercent = parseInt(total/2340*100)
+		if (totalPercent < 0){
+			totalPercent = " less than 1"
+		}
 		d3.selectAll('#barHighlight')
 			.html(sectorStats[i][0]+"- "+ total + " visas, or "+totalPercent+"% of all visas");
 		d3.select(this).attr("opacity", 1);
 	})
 	.on("click", function(d,i){
 		var currentSector = sectorStats[i][0]
+		var selectedDetailsText = generateAggregatedText(currentSector)
 		var selectedDetails = aggregateBySector(currentSector)
-		var selectedDetails = aggregateBySector(currentSector)
-		
 		//console.log("selected details: ", selectedDetails)
-		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails))
-		d3.selectAll("svg3").remove();
-		drawMap();
+		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText))
+		d3.select(".svg3")
+		.attr("opacity", 1)
+		.transition()
+		.duration(1000)
+		.attr("opacity", 0)
+		.remove()
+		redrawMap(countryCount);
 	})
 };
 
-function drawMap() {
+function redrawMap(countryCount) {
 	var width = 800;
-	var height = 600;
+	var height = 400;	
 	var countByCountry = d3.map();
 	var projection = d3.geo.mercator()
 	    .scale(120)
-	    .translate([width / 2, height / 2]);
+	    .translate([width / 2, height/2+50]);
 	var path = d3.geo.path()
 	    .projection(projection);
 		
 	var svg3 = d3.select("div.map")
 		.append("svg:svg")
+		.attr("class", "svg3")
 		.attr("width", width)
 		.attr("height", height)
 		.append("svg:g");	
-	var color = d3.scale.linear()
-		.range(["#ddd", "red"])
-		
+	var color = d3.scale.sqrt()
+		.range(["#efefef", "#665D50"])
 	d3.json("world.geojson", function(json){
 		var dataValues = []
-		
 	for(var i = 0; i < countryCount.length; i++){
 		var dataCountry = countryCount[i][0].toLowerCase();
 		var dataValue = countryCount[i][1];
@@ -391,16 +447,20 @@ function drawMap() {
 	.enter()
 	.append("path")
 	.attr("d", path)
-	.style("stroke", "#fff")
+	//.style("stroke", "#fff")
 	.style("fill", function(d){
 		var value = d.properties.value;
+		console.log(d.properties.name, value)
 		if(value){
-			console.log(value, color(value))
 			return color(value);
 		}else{
-			return "#ddd";
+			return "#efefef";
 		}
-	});	
+	})
+	.attr("opacity", 0)
+	.transition()
+	.duration(1000)
+	.attr("opacity", 1);	
 	})
 }
 

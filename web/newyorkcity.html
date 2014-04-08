@@ -19,6 +19,13 @@
 		font-size:14px;
 		color:#888;
 	}
+	#header{
+		width:90%;
+		position:absolute;
+		top:0px;
+		left:0px;
+		padding:20px;
+	}
 	#title{
 		font-size:60px;
 	}
@@ -43,17 +50,24 @@
 		left:400px;
 		top:0px;
 	}
+	.barchart{
+		position:absolute;
+		left:20px;
+		top:20px;
+	}
 	</style>
 </head>
 
 
 <body>
+<div id = "header">
 <div id = "title">New York City</div>
 <div id = "subtitle">This map visualizes 2340 H1B visa applications in New York City in 2013</div>
-<div id = "barHighlight"></div>
+</div>
 <div id = "visaDetails"></div>
 
-<div id="barchart"></div>
+<div class="barchart"><div id = "barHighlight"></div>
+</div>
 <div class="map"></div>
 
 <script src="newyorkcity.js"></script>
