@@ -146,9 +146,28 @@ function aggregateBySector(Sector){
 		else{
 			visasBySector[currentCountry].push(visasTargetSector[visa])
 		}
-	}	
-	console.log(visasBySector)
-	return visasBySector
+	}
+	console.log(visasBySector["Origin Country"])
+	//sort by country
+	var sectorByTitle = []
+	var sectorByCompany = []
+	for (visa in visasTargetSector){
+		var currentTitle = visasTargetSector[visa]["Job Title"];
+		if(visasBySector[currentTitle] in sectorByTitle){
+			sectorByTitle[currentTitle].push(visasTargetSector[visa]["Job Title"])
+		}
+		else{
+			sectorByTitle.push(visasTargetSector[visa]["Job Title"])
+		}
+	}
+	for (visa in visasTargetSector){
+		var currentCompany = visasTargetSector[visa]["Company"]
+		sectorByCompany.push(currentCompany)
+	}
+	
+	var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
+	console.log("title",sectorByTitle)
+	return  printedString
 }
 
 
@@ -309,6 +328,8 @@ function drawBarGraph(dataset){
 	.on("click", function(d,i){
 		var currentSector = sectorStats[i][0]
 		var selectedDetails = aggregateBySector(currentSector)
+		var selectedDetails = aggregateBySector(currentSector)
+		
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails))
 	})
