@@ -93,9 +93,6 @@ function aggregateBySectorAndStatusText(Sector, Status){
 			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
 		}
 	}
-	
-
-
 	var sectorByTitle = {}
 	var sectorByCompany = []
 	for (visa in visasTargetSectorStatus){
@@ -103,17 +100,11 @@ function aggregateBySectorAndStatusText(Sector, Status){
 		if(sectorByTitle[currentTitle]== undefined){
 			sectorByTitle[currentTitle]=[]
 			sectorByTitle[currentTitle].push(currentTitle)
-			//console.log(currentTitle)
-			//console.log(sectorByTitle, "in array")
-			//do nothing
 		}
 		else{
 			sectorByTitle[currentTitle].push(currentTitle)
-			//console.log(currentTitle)
-			//console.log(sectorByTitle, "not in array")
 		}
 	}
-	//console.log(sectorByTitle)
 	var titleStats = []
 	for(title in sectorByTitle){
 		titleStats.push([sectorByTitle[title].length, sectorByTitle[title][0]+"<br/>"])
@@ -130,7 +121,7 @@ function aggregateBySectorAndStatusText(Sector, Status){
 		var printedString = "This Sector Contains No Applications."
 		
 	}else{
-		var printedString = "The Top 5 Job Titles in this Sector are <br/>" + titleStats.join(" ")
+		var printedString = "The Top <em>"+Status+"</em>  Job Titles in  <em>"+Sector+"</em> are <br/>" + titleStats.join(" ")
 		
 	}
 //	console.log("title",sectorByTitle)
@@ -229,10 +220,10 @@ function generateAggregatedText(Sector){
 //	console.log(sectorByCompany.length)
 	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
 	if(sectorByTitle.length<1){
-		var printedString = "This Sector Contains No Applications."
+		var printedString = "<em>"+Sector+"</em> Contains No Applications."
 		
 	}else{
-		var printedString = "The Top 5 Job Titles in this Sector are <br/>" + titleStats.join(" ")
+		var printedString = "The Top Job Titles in <em>"+Sector+"</em> Sector are <br/>" + titleStats.join(" ")
 		
 	}
 //	console.log("title",sectorByTitle)
@@ -251,6 +242,53 @@ function aggregateByCountry(country){
 	}
 	return visasTargetCountry
 }
+
+function aggregateByCountryText(country){
+	//function that outputs job title and company for bargraph selections
+	//console.log("sector")
+	var visasTargetCountry=[]
+	for(visa in visas){
+		if (visas[visa]["Origin Country"].toLowerCase() == country.toLowerCase()){
+			visasTargetCountry.push(visas[visa])
+		}
+	}	
+	console.log("targetcountry", visasTargetCountry.length)
+	var sectorByTitle = {}
+	for (visa in visasTargetCountry){
+		var currentTitle = visasTargetCountry[visa]["Job Title"];
+		if(sectorByTitle[currentTitle]== undefined){
+			sectorByTitle[currentTitle]=[]
+			sectorByTitle[currentTitle].push(currentTitle)
+		}
+		else{
+			sectorByTitle[currentTitle].push(currentTitle)
+		}
+	}
+	console.log("sector by title", sectorByTitle)
+	var titleStats = []
+	for(title in sectorByTitle){
+		titleStats.push([sectorByTitle[title].length, sectorByTitle[title][0]+"<br/>"])
+	}
+
+	titleStats.sort(function(a,b) {return a[0] > b[0];});
+	titleStats.reverse();
+	titleStats.splice(5,titleStats.length-5);
+	titleStats = titleStats.map(function(a){return a[0] + " " + a[1]})
+	console.log("titlestats -- sorted",titleStats)
+//	console.log(sectorByCompany.length)
+	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
+	if(sectorByTitle.length<1){
+		var printedString = "<em>"+country+"</em> Contains No Applications."
+		
+	}else{
+		var printedString = "The Top Job Titles in Applications from <em>"+country+"</em> are <br/>" + titleStats.join(" ")
+		
+	}
+//	console.log("title",sectorByTitle)
+	//return  printedString
+	return printedString
+}
+
 
 function drawBarGraph(dataset){
 	//console.log("dataset", dataset)
@@ -392,13 +430,22 @@ function drawBarGraph(dataset){
 				})
 				.on("click", function(d,i){
 					var currentSector = sectorStats[i][0]
+					var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
+					
 					//TODO: find clicked on column, and pass into function for filtering
 					//var Status = d3.select(this).property(i)
 					var Status = d.type
 					var selectedDetails = aggregateBySectorAndStatus(currentSector, Status)
 					var selectedDetailsText = aggregateBySectorAndStatusText(currentSector, Status)
-					d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText));
-					d3.selectAll('#countryLabel').html(currentSector + " " + Status+ " for All Countries")
+					d3.selectAll('#visaDetails').html(selectedDetailsText);
+					if(d.type == "Certified"){
+						d3.selectAll('#countryLabel').html(sectorStats[i][1] + " "+ currentSector + " " + Status+ " Applications for All Countries")
+					}else if(d.type == "Withdrawn"){
+						d3.selectAll('#countryLabel').html(sectorStats[i][2] + " "+ currentSector + " " + Status+ " Applications for All Countries")
+					}else{
+						d3.selectAll('#countryLabel').html(sectorStats[i][3] + " "+ currentSector + " " + Status+ " Applications for All Countries")
+					}	
+					
 					d3.selectAll('#barHighlight').html("Distribution of Applications for all Countries")
 					
 					d3.select(".svg3")
@@ -428,9 +475,10 @@ function drawBarGraph(dataset){
 	.append("text")
 	.text(function(d){return d[0]})
 	.attr("font-size", "10px")
+	.attr("fill", "#222")
 	.attr("text-anchor", "end")
 	.attr("x", function(d,i){
-		return 112;
+		return 115;
 	})
 	.attr("y", function(d,i){ 
 		return 15+i*(w/(sectorStats.length)-1.5)
@@ -450,9 +498,11 @@ function drawBarGraph(dataset){
 		var currentSector = sectorStats[i][0]
 		var selectedDetailsText = generateAggregatedText(currentSector)
 		var selectedDetails = aggregateBySector(currentSector)
+		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(selectedDetailsText)
 		d3.selectAll('#countryLabel').html(currentSector+" All Status for All Countries")
+		d3.selectAll('#countryLabel').html(total + " "+ currentSector + " Applications for All Countries")
 		
 		d3.select(".svg3")
 		.attr("opacity", 1)
@@ -531,26 +581,27 @@ function redrawMap(countryCount, maxColor) {
 		var mouseOverCountry = d.properties.name
 		var countryTotal = filteredData.length
 		var visasLength = visas.length;
-		console.log(visasLength)
+		var countryJobTitle = aggregateByCountryText(country)
+		//console.log(visasLength)
 		var countryPercentage = parseInt(countryTotal/visasLength*100)
-		console.log(countryPercentage)
+		//console.log(countryPercentage)
 		if(countryPercentage < 1){
 		d3.selectAll('#countryLabel').html(mouseOverCountry+" had "+ countryTotal+" H1B visa applications, or less than 1% of global applications")
 		}else{
-		d3.selectAll('#countryLabel').html(mouseOverCountry+" had "+ countryTotal+" H1B visa applications, or "+ countryPercentage+"% of global application")
+		d3.selectAll('#countryLabel').html(mouseOverCountry+" had "+ countryTotal+" H1B visa applications, or "+ countryPercentage+"% of global applications")
 		}
 		d3.selectAll("#barHighlight").html("Distribution of applications from "+mouseOverCountry)
-		//console.log("filtered country dataset",filteredData)
+		d3.selectAll("#visaDetails").html(countryJobTitle)
 		d3.selectAll(".svg").remove();
 		d3.selectAll(".svg2").remove();
 		drawBarGraph(filteredData);
 		var countryCountAll = aggregateByCountryAll()
 		redrawMap(countryCountAll, "#665D50");
-		d3.select(this).attr("stroke","#fff")
+		d3.select(this).style("stroke","#fff")
 	})
 	.attr("opacity", 0)
 	.transition()
-	.duration(1000)
+	.duration(2000)
 	.attr("opacity", 1)
 	})
 }
