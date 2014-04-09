@@ -34,52 +34,7 @@ function aggregateByCountryAll(){
 	return countryCountAll
 }
 
-function aggregateByCountry(country){
-	//function that organize selected country's visas by sector, then status
-	var visasTargetCountry=[]
-	for(visa in visas){
-		if (visas[visa]["Origin Country"] == country){
-			visasTargetCountry.push(visas[visa])
-		}
-		var countryTotal = visasTargetCountry.length;
-	}
-	//console.log(visasByCountry)
-	return visasTargetCountry
-	var countryBySector = 
-		{
-		    "IT":[],
-		    "Other Economic Sector":[],
-		    "Advanced Mfg":[],
-		    "Educational Services":[],
-		    "Finance":[],
-		    "Health Care":[],
-			"Not Available":[],
-		    "Aerospace":[],
-		    "Retail":[],
-		    "Hospitality":[],
-		    "Construction":[],
-		    "Energy":[],
-		    "Automotive":[],
-		    "Transportation":[],
-		    "Agribusiness":[],
-		    "Biotechnology":[],
-		    "Geospatial":[],
-		    "Homeland Security":[]
-		}
-	for (visa in visasTargetCountry){
-		//console.log(visasByCountry[visa]["Economic Sector"])
-		var currentSector = visasTargetCountry[visa]["Economic Sector"];
-		var currentStatus = visasTargetCountry[visa]["Status"];
-		if(countryBySector[currentSector][currentStatus]==undefined){
-			countryBySector[currentSector][currentStatus]=[]
-			countryBySector[currentSector][currentStatus].push(visasTargetCountry[visa])
-		}else{
-			countryBySector[currentSector][currentStatus].push(visasTargetCountry[visa])
-		}
-	}
-	//console.log(country, countryBySector)
-	return visasTargetCountry
-}
+
 
 function aggregateBySectorAndStatus(Sector, Status){
 	//function that organizes selected sector and status by country
@@ -112,45 +67,40 @@ function aggregateBySectorAndStatus(Sector, Status){
 	console.log(visasBySectorStatus)
 	return countryCount
 }
+function aggregateBySectorAndStatusText(Sector, Status){
+	//function that organizes selected sector and status by country
+	console.log("sector/status")
+	var visasTargetSectorStatus = []
+	for (visa in visas){		
+		if (visas[visa]["Economic Sector"] == Sector && visas[visa]["Status"]== Status){
+			visasTargetSectorStatus.push(visas[visa])
+		}
+	}
+	console.log("hightlighted visas: ", visasTargetSectorStatus)
+	var visasBySectorStatus = {}
+	var uniqueJobTitle = []
+	for (visa in visasTargetSectorStatus){	
+		var currentCountry = visasTargetSectorStatus[visa]["Origin Country"];
+		if(visasBySectorStatus[currentCountry]==undefined){
+			visasBySectorStatus[currentCountry]=[]
+			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+		}
+		else{
+			visasBySectorStatus[currentCountry].push(visasTargetSectorStatus[visa])
+		}
+	}
+	
+	for (visa in visasTargetSectorStatus){
+		var currentTitle = visasTargetSectorStatus[visa]["Job Title"];
+		if(uniqueJobTitle.indexOf(currentTitle) > -1){
+		}
+		else{
+			uniqueJobTitle.push(currentTitle)
+		}
+	}
+	return String(uniqueJobTitle)
+}
 
-// function aggregatebySectorThenStatus(){
-// 	//function that organizes by each sector and then by each status
-// 	//format: sector, # certified, # withdrawn, # denied
-// 	var bySector = 
-// 		{
-// 		    "IT":[],
-// 		    "Other Economic Sector":[],
-// 		    "Advanced Mfg":[],
-// 		    "Educational Services":[],
-// 		    "Finance":[],
-// 		    "Health Care":[],
-// 			"Not Available":[],
-// 		    "Aerospace":[],
-// 		    "Retail":[],
-// 		    "Hospitality":[],
-// 		    "Construction":[],
-// 		    "Energy":[],
-// 		    "Automotive":[],
-// 		    "Transportation":[],
-// 		    "Agribusiness":[],
-// 		    "Biotechnology":[],
-// 		    "Geospatial":[],
-// 		    "Homeland Security":[]
-// 		}
-// 	for (visa in visas){
-// 		//console.log(visasByCountry[visa]["Economic Sector"])
-// 		var currentSector = visas[visa]["Economic Sector"];
-// 		var currentStatus = visas[visa]["Status"];
-// 		if(bySector[currentSector][currentStatus]==undefined){
-// 			bySector[currentSector][currentStatus]=[]
-// 			bySector[currentSector][currentStatus].push(visas[visa])
-// 		}else{
-// 			bySector[currentSector][currentStatus].push(visas[visa])
-// 		}
-// 	}
-// 	//console.log(bySector)
-// 	return(bySector)
-// }
 var countryCount = []
 
 function aggregateBySector(Sector){
@@ -243,65 +193,82 @@ function generateAggregatedText(Sector){
 	return printedString
 }
 
-
-
+function aggregateByCountry(country){
+	//function that organize selected country's visas by sector, then status
+	var visasTargetCountry=[]
+	for(visa in visas){
+		if (visas[visa]["Origin Country"] == country){
+			visasTargetCountry.push(visas[visa])
+			console.log(visas[visa]["Status"])
+		}
+	}
+	console.log("target",visasTargetCountry)
+	return visasTargetCountry
+}
 
 function drawBarGraph(dataset){
+	console.log("dataset", dataset)
+	
 	var bySector = 
 		{
-			"Other Economic Sector":[],
-		    "Finance":[],
-		    "IT":[],
-			"Not Available":[],
-		    "Health Care":[],
-		    "Advanced Mfg":[],
-		    "Educational Services":[],
-		    "Aerospace":[],
-		    "Retail":[],
-		    "Hospitality":[],
-		    "Construction":[],
-		    "Energy":[],
-		    "Automotive":[],
-		    "Transportation":[],
-		    "Agribusiness":[],
-		    "Biotechnology":[],
-		    "Geospatial":[],
-		    "Homeland Security":[]
+			"Other Economic Sector":{},
+		    "Finance":{},
+		    "IT":{},
+			"Not Available":{},
+		    "Health Care":{},
+		    "Advanced Mfg":{},
+		    "Educational Services":{},
+		    "Aerospace":{},
+		    "Retail":{},
+		    "Hospitality":{},
+		    "Construction":{},
+		    "Energy":{},
+		    "Automotive":{},
+		    "Transportation":{},
+		    "Agribusiness":{},
+		    "Biotechnology":{},
+		    "Geospatial":{},
+		    "Homeland Security":{}
 		}
 	for (visa in dataset){
 		//console.log(visasByCountry[visa]["Economic Sector"])
-		var currentSector = visas[visa]["Economic Sector"];
-		var currentStatus = visas[visa]["Status"];
+		var currentSector = dataset[visa]["Economic Sector"];
+		var currentStatus = dataset[visa]["Status"];
+
 		if(bySector[currentSector][currentStatus]==undefined){
 			bySector[currentSector][currentStatus]=[]
-			bySector[currentSector][currentStatus].push(visas[visa])
+			bySector[currentSector][currentStatus].push(dataset[visa])
 		}else{
-			bySector[currentSector][currentStatus].push(visas[visa])
+			bySector[currentSector][currentStatus].push(dataset[visa])
 		}
-	}	
-//	console.log(bySector)
+	}
+	console.log("bySector", bySector)
 	var sectorStats = []
 	for (sector in bySector){
+		var cCount = null
+		var dCount = null
+		var wCount = null
 //		console.log(bySector[sector])
-		if(bySector[sector]["Certified"]== null){
-			var cCount = 0
+		if(bySector[sector]["Certified"]== undefined){
+		//  cCount = 0
 		}else{ 
 			cCount = bySector[sector]["Certified"].length
 		}
-		if(bySector[sector]["Withdrawn"]== null){
-			var wCount = 0
+		if(bySector[sector]["Withdrawn"]== undefined){
+			//wCount = 0
 		}else{ 
 			wCount = bySector[sector]["Withdrawn"].length
 		}
-		if(bySector[sector]["Denied"]== null){
-			var dCount = 0
+		if(bySector[sector]["Denied"]== undefined){
+		//	dCount = 0
 		}else{ 
 			dCount = bySector[sector]["Denied"].length
 		}
 		sectorStats.push([sector, cCount,wCount,dCount])
+		console.log(sector, cCount, wCount,dCount)
 	}
-	//sectorStats.sort()
-	//console.log(sectorStats)
+	//sectorStats.sort()	
+	console.log("sectorStats", sectorStats)
 	var w = 400;
 	var h = 400;
 	
@@ -378,7 +345,8 @@ function drawBarGraph(dataset){
 					//var Status = d3.select(this).property(i)
 					var Status = d.type
 					var selectedDetails = aggregateBySectorAndStatus(currentSector, Status)
-					d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetails));
+					var selectedDetailsText = aggregateBySectorAndStatusText(currentSector, Status)
+					d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText));
 					d3.selectAll('#countryLabel').html(currentSector + " " +Status)
 					
 					d3.select(".svg3").attr("opacity", 1)
@@ -392,7 +360,7 @@ function drawBarGraph(dataset){
 					redrawMap(countryCount, "#EDA52B");		
 					}else{
 					redrawMap(countryCount, "#E63D25");	
-					}
+					}					
 			});
 				
 	svg2.selectAll("text")
@@ -501,11 +469,11 @@ function redrawMap(countryCount, maxColor) {
 	})
 	.on("click", function(d,i){
 		var country = d.properties.name
-		var dataset = aggregateByCountry(country.toUpperCase())
-		console.log(dataset)
+		var filteredData = aggregateByCountry(country.toUpperCase())
+		console.log("filtered country dataset",filteredData)
 		d3.selectAll(".svg").remove();
 		d3.selectAll(".svg2").remove();
-		drawBarGraph(dataset);
+		drawBarGraph(filteredData);
 	})
 	.attr("opacity", 0)
 	.transition()
