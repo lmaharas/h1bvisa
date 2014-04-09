@@ -70,6 +70,7 @@ function aggregateBySectorAndStatus(Sector, Status){
 //	console.log(visasBySectorStatus)
 	return countryCount
 }
+
 function aggregateBySectorAndStatusText(Sector, Status){
 	//function that organizes selected sector and status by country
 //	console.log("sector/status")
@@ -93,16 +94,54 @@ function aggregateBySectorAndStatusText(Sector, Status){
 		}
 	}
 	
+
+
+	var sectorByTitle = {}
+	var sectorByCompany = []
 	for (visa in visasTargetSectorStatus){
 		var currentTitle = visasTargetSectorStatus[visa]["Job Title"];
-		if(uniqueJobTitle.indexOf(currentTitle) > -1){
+		if(sectorByTitle[currentTitle]== undefined){
+			sectorByTitle[currentTitle]=[]
+			sectorByTitle[currentTitle].push(currentTitle)
+			//console.log(currentTitle)
+			//console.log(sectorByTitle, "in array")
+			//do nothing
 		}
 		else{
-			uniqueJobTitle.push(currentTitle)
+			sectorByTitle[currentTitle].push(currentTitle)
+			//console.log(currentTitle)
+			//console.log(sectorByTitle, "not in array")
 		}
 	}
-	return String(uniqueJobTitle)
+	//console.log(sectorByTitle)
+	var titleStats = []
+	for(title in sectorByTitle){
+		titleStats.push([sectorByTitle[title].length, sectorByTitle[title][0]+"<br/>"])
+	}
+
+	titleStats.sort(function(a,b) {return a[0] > b[0];});
+	titleStats.reverse();
+	titleStats.splice(5,titleStats.length-5);
+	titleStats = titleStats.map(function(a){return a[0] + " " + a[1]})
+	console.log("titlestats -- sorted",titleStats)
+//	console.log(sectorByCompany.length)
+	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
+	if(sectorByTitle.length<1){
+		var printedString = "This Sector Contains No Applications."
+		
+	}else{
+		var printedString = "The Top 5 Job Titles in this Sector are <br/>" + titleStats.join(" ")
+		
+	}
+//	console.log("title",sectorByTitle)
+	//return  printedString
+	return printedString
 }
+
+
+
+
+
 
 var countryCount = []
 
@@ -159,36 +198,41 @@ function generateAggregatedText(Sector){
 			visasBySector[currentCountry].push(visasTargetSector[visa])
 		}
 	}
-	var sectorByTitle = []
+	var sectorByTitle = {}
 	var sectorByCompany = []
 	for (visa in visasTargetSector){
 		var currentTitle = visasTargetSector[visa]["Job Title"];
-		if(sectorByTitle.indexOf(currentTitle) > -1){
+		if(sectorByTitle[currentTitle]== undefined){
+			sectorByTitle[currentTitle]=[]
+			sectorByTitle[currentTitle].push(currentTitle)
 			//console.log(currentTitle)
 			//console.log(sectorByTitle, "in array")
 			//do nothing
 		}
 		else{
-			sectorByTitle.push(currentTitle)
+			sectorByTitle[currentTitle].push(currentTitle)
 			//console.log(currentTitle)
 			//console.log(sectorByTitle, "not in array")
 		}
 	}
-	for (visa in visasTargetSector){
-		var currentCompany = visasTargetSector[visa]["Company"]
-		if (sectorByCompany.indexOf(currentCompany)> -1){
-			//do nothing
-		}else{
-			sectorByCompany.push(currentCompany)
-		}
+	//console.log(sectorByTitle)
+	var titleStats = []
+	for(title in sectorByTitle){
+		titleStats.push([sectorByTitle[title].length, sectorByTitle[title][0]+"<br/>"])
 	}
+
+	titleStats.sort(function(a,b) {return a[0] > b[0];});
+	titleStats.reverse();
+	titleStats.splice(5,titleStats.length-5);
+	titleStats = titleStats.map(function(a){return a[0] + " " + a[1]})
+	console.log("titlestats -- sorted",titleStats)
 //	console.log(sectorByCompany.length)
 	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
 	if(sectorByTitle.length<1){
-		var printedString = "This sector contains no applications."
+		var printedString = "This Sector Contains No Applications."
 		
 	}else{
-		var printedString = "This sector contains applications for " + sectorByTitle
+		var printedString = "The Top 5 Job Titles in this Sector are <br/>" + titleStats.join(" ")
 		
 	}
 //	console.log("title",sectorByTitle)
@@ -330,7 +374,7 @@ function drawBarGraph(dataset){
 						return 2
 					}else{
 					return y(d.y);}
-				 })
+				 })				 
 	            .attr("width", x.rangeBand()-3)
 				.attr("opacity", 0.6)
 				.on('mouseover', function(d,i){
@@ -399,7 +443,7 @@ function drawBarGraph(dataset){
 		}
 		
 		d3.select(this).attr("opacity", 1);
-		d3.selectAll('#visaDetails').html("")
+		//d3.selectAll('#visaDetails').html("")
 		
 	})
 	.on("click", function(d,i){
@@ -407,7 +451,7 @@ function drawBarGraph(dataset){
 		var selectedDetailsText = generateAggregatedText(currentSector)
 		var selectedDetails = aggregateBySector(currentSector)
 		//console.log("selected details: ", selectedDetails)
-		d3.selectAll('#visaDetails').html(JSON.stringify(selectedDetailsText))
+		d3.selectAll('#visaDetails').html(selectedDetailsText)
 		d3.selectAll('#countryLabel').html(currentSector+" All Status for All Countries")
 		
 		d3.select(".svg3")
@@ -476,7 +520,7 @@ function redrawMap(countryCount, maxColor) {
 	})
 	.style("stroke", function(d){
 		if(d.properties.name == "United States"){
-			return "#aaa"
+			return "#eee"
 		}
 	})
 	.on("mouseover", function(d,i){
@@ -500,7 +544,9 @@ function redrawMap(countryCount, maxColor) {
 		d3.selectAll(".svg").remove();
 		d3.selectAll(".svg2").remove();
 		drawBarGraph(filteredData);
-		redrawMap(countryCount, "#665D50");
+		var countryCountAll = aggregateByCountryAll()
+		redrawMap(countryCountAll, "#665D50");
+		d3.select(this).attr("stroke","#fff")
 	})
 	.attr("opacity", 0)
 	.transition()
