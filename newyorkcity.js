@@ -353,7 +353,7 @@ function drawBarGraph(dataset){
 	}
 	//sectorStats.sort()	
 	//console.log("sectorStats", sectorStats)
-	var w = 400;
+	var w = 280;
 	var h = 400;
 	
 	var svg = d3.select("div.barchart")
@@ -362,9 +362,8 @@ function drawBarGraph(dataset){
 		.attr("height", w)
 		.append("svg:g")
 		.attr("class", "svg")
-		
-		//.attr("transform", "translate(0,400)")
 		.attr("transform", "rotate(90 0 0)");
+	
 	var svg2 = d3.select("div.barchart")
 		.append("svg:svg")
 		.attr("class", "svg2")
@@ -373,7 +372,7 @@ function drawBarGraph(dataset){
 		.append("svg:g");
 //	console.log("draw bar")
 	p = [0, 50, 30, 20],
-    x = d3.scale.ordinal().rangeRoundBands([0, w-20]),
+    x = d3.scale.ordinal().rangeRoundBands([0, w-30]),
     y = d3.scale.linear().range([0, h-140]),
     z = d3.scale.ordinal().range(["#59D984","#EDA52B","#E63D25"]);
 	
@@ -392,7 +391,26 @@ function drawBarGraph(dataset){
 	y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
 	//console.log("x.domain(): " + x.domain())
 	//console.log("y.domain(): " + y.domain())
-           
+	var max =d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })
+
+	var yScale = d3.scale.linear().range([15, h-118])
+		.domain([max,0]);
+	var formatxAxis = d3.format('.0f');
+	var yAxis = d3.svg.axis()
+		.scale(yScale)
+		.tickValues(yScale.domain())
+		.orient("right")
+		.tickFormat(formatxAxis);	
+		
+	svg.append("g")
+		.attr("class", "x axis")
+		.attr("transform", "translate(245,-400)")
+		.call(yAxis)
+		.selectAll("text")
+		.attr("y",12)
+		    .attr("x", 0)
+		.attr("transform", "rotate(-90)")
+		.style("text-anchor", "end");	
 	var valgroup = svg.selectAll("g.valgroup")
 	            .data(stacked)
 	            .enter()
@@ -481,7 +499,7 @@ function drawBarGraph(dataset){
 		return 115;
 	})
 	.attr("y", function(d,i){ 
-		return 15+i*(w/(sectorStats.length)-1.5)
+		return 15+i*(w/(sectorStats.length)-2.5)
 	})
 	.on('mouseover', function(d,i){
 		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
@@ -501,9 +519,8 @@ function drawBarGraph(dataset){
 		var total = sectorStats[i][1]+sectorStats[i][2]+sectorStats[i][3]
 		//console.log("selected details: ", selectedDetails)
 		d3.selectAll('#visaDetails').html(selectedDetailsText)
-		d3.selectAll('#countryLabel').html(currentSector+" All Status for All Countries")
-		d3.selectAll('#countryLabel').html(total + " "+ currentSector + " Applications for All Countries")
-		
+		d3.selectAll('#countryLabel').html("<em>"+currentSector+"</em> All Status for All Countries")
+		d3.selectAll('#countryLabel').html(total + " <em>"+ currentSector + "</em> Applications for All Countries")
 		d3.select(".svg3")
 		.attr("opacity", 1)
 		.transition()
@@ -585,13 +602,24 @@ function redrawMap(countryCount, maxColor) {
 		//console.log(visasLength)
 		var countryPercentage = parseInt(countryTotal/visasLength*100)
 		//console.log(countryPercentage)
-		if(countryPercentage < 1){
-		d3.selectAll('#countryLabel').html(mouseOverCountry+" had "+ countryTotal+" H1B visa applications, or less than 1% of global applications")
-		}else{
-		d3.selectAll('#countryLabel').html(mouseOverCountry+" had "+ countryTotal+" H1B visa applications, or "+ countryPercentage+"% of global applications")
+		if(country == "United States"){
+		d3.selectAll('#countryLabel').html("US Citizens do not apply for visas.")
+		d3.selectAll("#barHighlight").html("")
+		d3.selectAll("#visaDetails").html("")
+		}else if(countryTotal == 0){
+		d3.selectAll('#countryLabel').html(country + " had no visa applications in 2013.")
+		d3.selectAll("#barHighlight").html("")
+		d3.selectAll("#visaDetails").html("")
 		}
-		d3.selectAll("#barHighlight").html("Distribution of applications from "+mouseOverCountry)
+		else if(countryPercentage < 1){
+		d3.selectAll('#countryLabel').html("<em>"+mouseOverCountry+"</em> had "+ countryTotal+" H1B visa applications, or less than 1% of global applications in 2013")
+		d3.selectAll("#barHighlight").html("Distribution of applications from <em>"+mouseOverCountry+"</em>")
 		d3.selectAll("#visaDetails").html(countryJobTitle)
+		}else{
+		d3.selectAll('#countryLabel').html("<em>"+mouseOverCountry+"</em> had "+ countryTotal+" H1B visa applications, or "+ countryPercentage+"% of global applications in 2013")
+		d3.selectAll("#barHighlight").html("Distribution of applications from <em>"+mouseOverCountry+"</em>")
+		d3.selectAll("#visaDetails").html(countryJobTitle)
+		}
 		d3.selectAll(".svg").remove();
 		d3.selectAll(".svg2").remove();
 		drawBarGraph(filteredData);
