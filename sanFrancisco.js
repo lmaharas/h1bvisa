@@ -1,5 +1,5 @@
 var visas = [];
-d3.csv("reduced_data/h1b_newyork.csv", function(data)
+d3.csv("reduced_data/h1b_sanFrancisco.csv", function(data)
 	{
 	//	console.log(data);
 		for(visa in data){
