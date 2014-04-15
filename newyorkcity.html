@@ -73,7 +73,7 @@
 	}
 	.map{
 		position:absolute;
-		left:400px;
+		left:410px;
 		top:0px;
   	  	z-index:0;
 		
@@ -153,14 +153,16 @@
 	
 }
 .svg2 text:hover {
-   fill:#E53F21;
+   fill:black;
 }
+a:link{color:inherit;}
+a:visited{color:inherit;}
+a:hover {color:black; text-decoration:none;}
 #keyAll{position:absolute; left: 90px; top: 165px;}
 #keyCertified{position:absolute; left: 158px; top: 165px;}
 #keyWithdrawn{position:absolute; left: 215px; top: 165px;}
 #keyDenied{position:absolute; left: 282px; top: 165px;}
-
-	</style>
+</style>
 </head>
 
 
@@ -171,10 +173,10 @@
 <div id = "subtitle">This map visualizes 2340 H1B visa applications in New York City in 2013 <a href="#" id="showMore">... more</a></div>
 </div>
 <div id = "key">
-<div id = "keyAll"><span style = "color:#111">All Status | </span></div>
-<div id = "keyCertified"><span style = "color:#59D984">Certified</span></div> 
-<div id = "keyWithdrawn"><span style = "color:#EDA52B">Withdrawn</span></div> 
-<div id = "keyDenied"><span style = "color:#E63D25">Denied</span></div>
+<div id = "keyAll"><span style = "color:#aaa"><a href="#">All Status</a> | </span></div>
+<div id = "keyCertified"><span style = "color:#59D984"><a href="#">Certified</a></span></div> 
+<div id = "keyWithdrawn"><span style = "color:#EDA52B"><a href="#">Withdrawn</a></span></div> 
+<div id = "keyDenied"><span style = "color:#E63D25"><a href="#">Denied</a></span></div>
 </div>
 
 <div id = "visaDetails"></div>

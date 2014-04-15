@@ -20,27 +20,43 @@ d3.csv("reduced_data/h1b_newyork.csv", function(data)
 		d3.selectAll('#countryLabel').html("Distribution of Applications for All Sectors")
 		d3.selectAll("#keyAll")
 		.on("click", function(){
-			console.log("click all")
-			d3.selectAll(".svg3").remove()
+		//	console.log("click all")
+			d3.selectAll(".svg3").attr("opacity",1).transition().duration(1000).attr("opacity", 0).selectAll(".svg3").remove()
 			redrawMap(aggregateByCountryAll(),"#665D50");
+			d3.selectAll('#visaDetails').html("");
+			d3.selectAll('#countryLabel').html("All Sectors & Statuses");
+			d3.selectAll('#barHighlight').html("Distribution of Applications for all Countries")
+			
 		})
 		d3.selectAll("#keyCertified")
 		.on("click", function(){
-			console.log("click certified")
-			d3.selectAll(".svg3").remove()
+		//	console.log("click certified")
+			d3.selectAll(".svg3").attr("opacity",1).transition().duration(1000).attr("opacity", 0).selectAll(".svg3").remove()
 			redrawMap(certifiedAll,"#59D984");
+			d3.selectAll('#visaDetails').html("");
+			d3.selectAll('#countryLabel').html("All Sectors Certified");
+			d3.selectAll('#barHighlight').html("Distribution of Applications for all Countries")
+			
 		})
 		d3.selectAll("#keyWithdrawn")
 		.on("click", function(){
-			console.log("click withdraw")
-			d3.selectAll(".svg3").remove()
+		//	console.log("click withdraw")
+			d3.selectAll(".svg3").attr("opacity",1).transition().duration(1000).attr("opacity", 0).selectAll(".svg3").remove()
 			redrawMap(withdrawnAll, "#EDA52B");
+			d3.selectAll('#visaDetails').html("");
+			d3.selectAll('#countryLabel').html("All Sectors Withdrawn");
+			d3.selectAll('#barHighlight').html("Distribution of Applications for all Countries")
+			
 		})
 		d3.selectAll("#keyDenied")
 		.on("click", function(){
-			console.log("click denied")
-			d3.selectAll(".svg3").remove()
+		//	console.log("click denied")
+			d3.selectAll(".svg3").attr("opacity",1).transition().duration(1000).attr("opacity", 0).selectAll(".svg3").remove()
 			redrawMap(deniedAll, "#E63D25");
+			d3.selectAll('#visaDetails').html("");
+			d3.selectAll('#countryLabel').html("All Sectors Denied");
+			d3.selectAll('#barHighlight').html("Distribution of Applications for all Countries")
+			
 		})
 		return visas
 	}
@@ -170,7 +186,7 @@ function aggregateBySectorAndStatusText(Sector, Status){
 	titleStats.reverse();
 	titleStats.splice(5,titleStats.length-5);
 	titleStats = titleStats.map(function(a){return a[0] + " " + a[1]})
-	console.log("titlestats -- sorted",titleStats)
+//	console.log("titlestats -- sorted",titleStats)
 //	console.log(sectorByCompany.length)
 	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
 	if(sectorByTitle.length<1){
@@ -308,7 +324,7 @@ function aggregateByCountryText(country){
 			visasTargetCountry.push(visas[visa])
 		}
 	}	
-	console.log("targetcountry", visasTargetCountry.length)
+//console.log("targetcountry", visasTargetCountry.length)
 	var sectorByTitle = {}
 	for (visa in visasTargetCountry){
 		var currentTitle = visasTargetCountry[visa]["Job Title"];
@@ -320,7 +336,7 @@ function aggregateByCountryText(country){
 			sectorByTitle[currentTitle].push(currentTitle)
 		}
 	}
-	console.log("sector by title", sectorByTitle)
+//	console.log("sector by title", sectorByTitle)
 	var titleStats = []
 	for(title in sectorByTitle){
 		titleStats.push([sectorByTitle[title].length, sectorByTitle[title][0]+"<br/>"])
@@ -330,7 +346,7 @@ function aggregateByCountryText(country){
 	titleStats.reverse();
 	titleStats.splice(5,titleStats.length-5);
 	titleStats = titleStats.map(function(a){return a[0] + " " + a[1]})
-	console.log("titlestats -- sorted",titleStats)
+//	console.log("titlestats -- sorted",titleStats)
 //	console.log(sectorByCompany.length)
 	//var printedString = "This sector contains applications for " + sectorByTitle + " working at " + sectorByCompany
 	if(sectorByTitle.length<1){
@@ -688,7 +704,7 @@ function redrawMap(countryCount, maxColor) {
 	})
 	.attr("opacity", 0)
 	.transition()
-	.duration(2000)
+	.duration(1000)
 	.attr("opacity", 1)
 	})
 }
@@ -710,7 +726,7 @@ var essayBoxShown = false;
 
 
    $('#essayBox-close').click(function(){
-	   console.log("close")
+//	   console.log("close")
      closeEssayBox();
      $('#showMore').text(' ... more ');
    });
