@@ -817,70 +817,69 @@ function drawHistogram(countryCount, maxColor) {
 	countryCount.sort(sortByValue)
 	countryCount.reverse()
 	svg4.selectAll("rect")
-	.data(countryCount)
-	.enter()
-	.append("rect")
-	//.style("stroke", "#fff")
-	.attr("x", function(d,i){
-		//console.log(countryCount.length)
-		return i*(width/countryCount.length)
-	})
-	.attr("y", function(d,i){
-		//console.log(countryCount[1])
-		return height- heightScale(countryCount[i][1])
-	})
-	.attr("width",(width/countryCount.length)-1)
-	.attr("height", function(d,i){
-		//console.log(countryCount[i][1])
-		return  heightScale(countryCount[i][1])
-	})
-	.style("fill", function(d,i){
-		//console.log(countryCount[i][1])
-		return color(dataValue)
-	})
-	.style("opacity",0.4)
-	.on("mouseover", function(d,i){
-		var rank = i+1
-		var countryNameCap =''
-		var countryName = countryCount[i][0].toLowerCase().split(' ')
-		for(var c=0; c< countryName.length; c++){
-			countryNameCap += countryName[c].substring(0,1).toUpperCase() + countryName[c].substring(1,countryName[c].length) +' ';
-		}
-		//console.log(countryNameCap + " has "+countryCount[i][1]+" visas in this sector and is ranked " + rank)
-		d3.select("#histogramLabel").html(countryNameCap)
-		d3.select(this).style("opacity", .8)
-		d3.selectAll(".svg3").style("opacity", function(d){
-			console.log()
-			return 0.1
+		.data(countryCount)
+		.enter()
+		.append("rect")
+		//.style("stroke", "#fff")
+		.attr("x", function(d,i){
+			//console.log(countryCount.length)
+			return i*(width/countryCount.length)
 		})
-	})
-	.on("mouseout", function(d,i){
-		//d3.select("#rollover").html("")
-		d3.select(this).style("opacity", .3)
-		d3.selectAll(".clicked .svg4").style("opacity", 1)
-		d3.selectAll(".unclicked .svg4").style("opacity", .3)
-
-		d3.select(".svg3").style("opacity", 1)
+		.attr("y", function(d,i){
+			//console.log(countryCount[1])
+			return height- heightScale(countryCount[i][1])
+		})
+		.attr("width",(width/countryCount.length)-1)
+		.attr("height", function(d,i){
+			//console.log(countryCount[i][1])
+			return  heightScale(countryCount[i][1])
+		})
+		.style("fill", function(d,i){
+			//console.log(countryCount[i][1])
+			return color(dataValue)
+		})
+		.style("opacity",0.4)
+		.on("mouseover", function(d,i){
+			var rank = i+1
+			var countryNameCap =''
+			var countryName = countryCount[i][0].toLowerCase().split(' ')
+			for(var c=0; c< countryName.length; c++){
+				countryNameCap += countryName[c].substring(0,1).toUpperCase() + countryName[c].substring(1,countryName[c].length) +' ';
+			}
+			//console.log(countryNameCap + " has "+countryCount[i][1]+" visas in this sector and is ranked " + rank)
+			d3.select("#histogramLabel").html(countryNameCap)
+			d3.select(this).style("opacity", .8)
+			d3.selectAll(".svg3").style("opacity", function(d){
+				console.log()
+				return 0.1
+			})
+		})
+		.on("mouseout", function(d,i){
+			//d3.select("#rollover").html("")
+			d3.select(this).style("opacity", .3)
+			d3.selectAll(".clicked .svg4").style("opacity", 1)
+			d3.selectAll(".unclicked .svg4").style("opacity", .3)
+			d3.select(".svg3").style("opacity", 1)
 		
-	})
-	.on("click", function(d,i){
-		console.log("click hist")
-		d3.selectAll("rect").attr("class", "unclicked")
-		d3.select(this).attr("class", "clicked")
-		d3.selectAll(".clicked .svg4").style("opacity", 1)
-		d3.selectAll(".unclicked .svg4").style("opacity", .3)
-		var rank = i+1
-		var countryNameCap =''
-		var countryName = countryCount[i][0].toLowerCase().split(' ')
-		for(var c=0; c< countryName.length; c++){
-			countryNameCap += countryName[c].substring(0,1).toUpperCase() + countryName[c].substring(1,countryName[c].length) +' ';
-		}
-		d3.select("#histogramLabel").html(countryNameCap + " has "+countryCount[i][1]+" visas and is ranked " + rank)
-	})
-	.attr("opacity", 0)
-	.transition()
-	.duration(1000)
-	.attr("opacity", 1)
+		})
+		.on("click", function(d,i){
+			console.log("click hist")
+			d3.selectAll("rect").attr("class", "unclicked")
+			d3.select(this).attr("class", "clicked")
+			d3.selectAll(".clicked .svg4").style("opacity", 1)
+			d3.selectAll(".unclicked .svg4").style("opacity", .3)
+			var rank = i+1
+			var countryNameCap =''
+			var countryName = countryCount[i][0].toLowerCase().split(' ')
+			for(var c=0; c< countryName.length; c++){
+				countryNameCap += countryName[c].substring(0,1).toUpperCase() + countryName[c].substring(1,countryName[c].length) +' ';
+			}
+			d3.select("#histogramLabel").html(countryNameCap + " has "+countryCount[i][1]+" visas and is ranked " + rank)
+		})
+		.attr("opacity", 0)
+		.transition()
+		.duration(1000)
+		.attr("opacity", 1)
 }
 
 var essayBoxShown = false;

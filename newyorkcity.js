@@ -4,17 +4,59 @@ d3.csv("reduced_data/2012_2013_perm_newyorkcity.csv", function(data)
 		for(visa in data){
 			visas.push(data[visa]);
 		}
-		console.log("visas",visas);
-		filteredData = targetData("All", "All","Finance")
-		filteredData2 = targetData("MEXICO", "All","All")
-		filteredData3 = targetData("All", "All","All")
+		//console.log("visas",visas);
+		filteredData = targetData("All", "All","All")
 		
-		console.log(mapTally(filteredData))
-		drawBarGraph(barTally(targetData("All", "All", "All")))
-		drawMap(mapTally(targetData("All", "All", "All")), "All")
+		//console.log(mapTally(filteredData))
+		drawBarGraph(barTally(filteredData))
+		drawMap(mapTally(filteredData), "All")
+		drawHistogram(mapTally(filteredData), "All")
+		textTally(filteredData)
+		d3.selectAll("#keyAll")
+		.on("click", function(){
+			drawWithKey("All")
+		})
+		d3.selectAll("#keyAccepted")
+		.on("click", function(){
+			drawWithKey("Accepted")
+		})
+		d3.selectAll("#keyWithdrawn")
+		.on("click", function(){
+			drawWithKey("Withdrawn")
+		})
+		d3.selectAll("#keyDenied")
+		.on("click", function(){
+			drawWithKey("Denied")
+		})
 	}
 )
-
+function drawWithKey(Status){
+	
+	
+	if(Status == "All"){
+		d3.selectAll("#vizTitle").html("All Status")
+	}else{
+		d3.selectAll("#vizTitle").html("All "+ Status)
+	}
+	var filteredData = targetData("All", Status, "All")
+	textTally(filteredData)
+	d3.selectAll(".histogram rect").remove()
+	d3.selectAll(".map path").remove()
+	d3.selectAll(".stackedBarGraph rect").remove()
+	d3.selectAll(".stackedBarGraph text").remove()
+	d3.selectAll(".barchart svg").remove()
+	drawBarGraph(barTally(filteredData))
+	drawMap(mapTally(filteredData), Status)
+	drawHistogram(mapTally(filteredData), Status)
+	
+}
+function drawWithText(Sector){
+	d3.selectAll(".histogram rect").remove()
+	d3.selectAll(".map path").remove()
+	drawMap(mapTally(targetData("All", "All",Sector)), "All")
+	drawHistogram(mapTally(targetData("All","All",Sector)), "All")
+}
+//filters data
 function targetData(Country, Status, Sector){
 	targetCountry=[]
 	targetCountryStatus=[]
@@ -22,7 +64,7 @@ function targetData(Country, Status, Sector){
 	for(visa in visas){
 		if(Country == "All"){
 			targetCountry.push(visas[visa])
-		}else if (visas[visa]["Origin Country"]== Country){
+		}else if (visas[visa]["Origin Country"].toLowerCase()== Country.toLowerCase()){
 			targetCountry.push(visas[visa])
 		}
 	}
@@ -43,6 +85,7 @@ function targetData(Country, Status, Sector){
 	return targetCountryStatusSector
 }
 
+// formats filtered data for stacked bar
 function barTally(targetCountryStatusSector){
 	//tally by sector then status
 	var bySector = {
@@ -76,7 +119,7 @@ function barTally(targetCountryStatusSector){
 		}
 	}
 	}
-	console.log(bySector)
+	//console.log(bySector)
 	barStats = []
 	for (sector in bySector){
 		var cCount = null
@@ -101,6 +144,8 @@ function barTally(targetCountryStatusSector){
 	barStats.reverse()
 	return(barStats)
 }
+
+//formats filtered data for map and histogram
 function mapTally(targetCountryStatusSector){
 	//tally by country
 	var byCountry = {}
@@ -113,23 +158,82 @@ function mapTally(targetCountryStatusSector){
 			byCountry[currentCountry].push(targetCountryStatusSector[visa])
 		}
 	}
-	console.log(byCountry)
+	//console.log(byCountry)
 	var mapStats=[]
 	for(country in byCountry){
 		var currentCountry = byCountry[country]
-		mapStats.push([country, byCountry[country].length])
+		mapStats.push([country.toLowerCase(), byCountry[country].length])
 	}
 	return mapStats
 }
+
 function histTally(targetCountryStatusSector){	
 }
 function textTally(targetCountryStatusSector){
 	//tally by job description
-	
+	var jobDescription = {}
+	for(visa in targetCountryStatusSector){
+		var currentJob = targetCountryStatusSector[visa]["Job Title"]
+		if(currentJob != "Not Available"){
+		if(jobDescription[currentJob]==undefined){
+			jobDescription[currentJob]=[]
+			jobDescription[currentJob].push(targetCountryStatusSector[visa]["Job Title"])
+		}else{
+			jobDescription[currentJob].push(targetCountryStatusSector[visa]["Job Title"])
+		}
+	}
+	}
+	var jobDescriptionFreq = []
+	for (job in jobDescription){
+		jobDescriptionFreq.push([jobDescription[job][0], jobDescription[job].length])
+	}
+	jobDescriptionFreq.sort(function(a,b) {return a[1] > b[1];});
+	var totalJobsDiversity = jobDescriptionFreq.length
+	jobDescriptionFreq.reverse();
+	jobDescriptionFreq.splice(5,jobDescriptionFreq.length-5);
+	jobDescriptionFreq = jobDescriptionFreq.map(function(a){return a[0] + " " + a[1]})
+	console.log("Top Jobs: ", jobDescriptionFreq)
 	//tally by status rate
-	
-	//tally by rank
+	var totalVisas = targetCountryStatusSector.length 
+	console.log("Number of Visas:", totalVisas)
+	console.log("Job Diversity: ", totalJobsDiversity)
+	var countryDiversity = 	mapTally(targetCountryStatusSector).length
+
+	var statusPercentages = tallyStatus(targetCountryStatusSector)
+	console.log(statusPercentages.length)
+	if(statusPercentages.length == 2){
+		statusPercentages = ""
+	}
+	statusPercentages=statusPercentages.join(" ")
+	jobDescriptionFreq=jobDescriptionFreq.join("</br>")
+	if( countryDiversity == 1){
+		d3.selectAll("#visaDetails").html("<span style = \"color: black;font-size:18px\">Details</span></br>"+totalVisas +" Visas in "+totalJobsDiversity+ " Types of Jobs</br>"+statusPercentages+"</br>Top Jobs:</br> "+ jobDescriptionFreq)
+	}else{
+	d3.selectAll("#visaDetails").html("<span style = \"color: black; font-size:18px\">Details</span></br>"+totalVisas +" Visas from "+countryDiversity+" countries in "+totalJobsDiversity+" Types of Jobs</br>"+statusPercentages+"</br>Top Jobs:</br> "+ jobDescriptionFreq)
+	}
 }
+function tallyStatus(targetCountryStatuSector){
+	var statusTally = {}
+	for(visa in targetCountryStatusSector){
+		var currentStatus = targetCountryStatusSector[visa]["Status"]
+		if(statusTally[currentStatus]==undefined){
+			statusTally[currentStatus]=[]
+			statusTally[currentStatus].push(targetCountryStatusSector[visa]["Status"])
+		}else{
+			statusTally[currentStatus].push(targetCountryStatusSector[visa]["Status"])
+		}
+	}
+	var total = targetCountryStatusSector.length
+	var statusFreq = []
+	for (Status in statusTally){
+		statusFreq.push(d3.round(statusTally[Status].length/total*100)+"% "+statusTally[Status][0])
+	}
+	console.log(statusFreq)
+	console.log(total)
+	return statusFreq
+}
+
+//draw stacked bar
 function drawBarGraph(dataset){
 	var w = 280;
 	var h = 400;
@@ -221,7 +325,7 @@ function drawBarGraph(dataset){
 		.append("text")
 		.text(function(d){return d[0]})
 		.attr("fill", "#aaa")
-		.attr("font-size", "10px")
+		.attr("font-size", "9px")
 		.attr("x", function(d,i){
 			return 115
 		})
@@ -229,6 +333,24 @@ function drawBarGraph(dataset){
 		.attr("transform", "rotate(-90)")
 		.attr("y", function(d,i){
 			return 15+i*(w/(dataset.length)-2.5)
+		})
+		.on("mouseover", function(){
+			d3.select(this).attr("fill", "black")
+		})
+		.on("mouseout", function(){
+			d3.select(this).attr("fill", "#aaa")
+		})
+		.on("click", function(d,i){
+			var Sector = dataset[i][0]
+			console.log(Sector)
+			drawWithText(Sector)
+			d3.selectAll("#vizTitle").html("All "+Sector)
+			var filteredData = targetData("All","All", Sector)
+			textTally(filteredData)
+			d3.selectAll(".stackedBarGraph rect").remove()
+			d3.selectAll(".stackedBarGraph text").remove()
+			d3.selectAll(".barchart svg").remove()
+			drawBarGraph(barTally(filteredData))
 		})
 	//Interaction
 	stackedBarGraph.selectAll("rect")
@@ -242,28 +364,39 @@ function drawBarGraph(dataset){
 			})
 			.on("click", function(d,i){
 				d3.selectAll("rect").attr("class","unclicked")
-				d3.selectAll(".unclicked").attr("opacity", .5)
 				d3.select(this).attr("class","clicked")
+				console.log(this)
+				d3.selectAll(".unclicked").attr("opacity", .5)
 				d3.selectAll(".clicked").transition().attr("opacity", 1)
 				var Status = d.type
 				var Sector = (dataset[i][0])
 				var filteredData = targetData("All", Status, Sector)
-				//re-filter data
-				console.log(Status, Sector)
-				console.log(filteredData)
-				//redrawmap
+				
+				console.log("visas",visas.length)
+				//erase map /redraw map
+				d3.selectAll(".map path").remove()
 				drawMap(mapTally(filteredData), Status)
-				//re-render text
+				//reset bar / redraw histogram
+				d3.selectAll(".histogram rect").remove()
+				drawHistogram(mapTally(filteredData), Status)
+				d3.selectAll("#vizTitle").html(Status+" "+Sector)
+				textTally(filteredData )
+				d3.selectAll(".stackedBarGraph rect").remove()
+				d3.selectAll(".stackedBarGraph text").remove()
+				d3.selectAll(".barchart svg").remove()
+				drawBarGraph(barTally(filteredData))
 			})
 }
+
+//draw map
 function drawMap(dataset, Status){
 	console.log("map")
-	var width = 600;
+	var width = 650;
 	var height = 400;
 	var mpa = d3.map();
 	var projection = d3.geo.mercator()
 		.scale(120)
-		.translate([width/2-44, height/2+50]);
+		.translate([width/2-40, height/2+40]);
 	var path = d3.geo.path()
 		.projection(projection);
 	var map = d3.select("div.map")
@@ -281,14 +414,12 @@ function drawMap(dataset, Status){
 	}else if (Status == "All"){
 		maxColor = "black"
 	}
-	var color = d3.scale.sqrt().range(["#fff", maxColor])
-	console.log("mapvalues",dataset)
+	
 	
 	d3.json("world.geojson", function(json){
 		var mapValues = []
 		for(var i = 0; i < dataset.length; i++){
 			var dataCountry = dataset[i][0].toLowerCase();
-			console.log(dataCountry)
 			var dataValue = dataset[i][1];
 			mapValues.push(dataValue);
 			for(var j = 0; j < json.features.length; j++){
@@ -296,10 +427,19 @@ function drawMap(dataset, Status){
 				if(dataCountry == jsonCountry){
 					json.features[j].properties.value = dataValue;
 					break;
-				}
+				}				
 			}
-		}
-	color.domain([0,d3.max(mapValues)])
+			
+		}		
+	function sortByValue(a,b){
+	return a["properties"]["value"]-b["properties"]["value"];
+	}
+	
+	json.features.sort(sortByValue)
+	json.features.reverse();
+	
+	var color = d3.scale.sqrt().range(["#fff", maxColor])	
+		color.domain([0,d3.max(mapValues)])
 	map.selectAll("path")
 		.data(json.features)
 		.enter()
@@ -317,28 +457,182 @@ function drawMap(dataset, Status){
 				return "#fff";
 			}
 		})
-		.attr("opacity",.8)
+		.attr("opacity",.5)
 		.style("stroke", function(d){
 			if(d.properties.name == "United States"){
 				return "#eee"
 			}
 		})
+	map.selectAll("path").attr("class","mapunclicked")
+	
 	map.selectAll("path")
 	.on("mouseover", function(){
-		
+		var currentColor = this.style["fill"]
+		d3.select(this).transition().attr("opacity", 1)
 	})
 	.on("mouseout", function(){
-		
+		var currentColor = this.style["fill"]
+		d3.select(this).transition().attr("opacity", .5)
+		//d3.selectAll(".mapunclicked").transition().attr("opacity", .5)
+		d3.selectAll(".mapunclicked").attr("opacity", .5)
 	})
-	.on("click", function(){
+	.on("click", function(d,i){		
+		d3.selectAll("path").attr("class","mapunclicked")
+		d3.selectAll(".mapunclicked").transition().style("fill", "#eee")
+		d3.selectAll(".mapunclicked").attr("opacity", .5)
 		
+		d3.select(this).attr("class","mapclicked")
+		d3.selectAll(".mapclicked").transition().style("fill", maxColor)
+		
+		//take away graph
+		d3.selectAll(".stackedBarGraph rect").remove()
+		d3.selectAll(".stackedBarGraph text").remove()
+		d3.selectAll(".barchart svg").remove()
+		
+		console.log(dataset)
+
+		//redraw graph
+		var Status = "All"
+		var Sector = "All"
+		var Country = json.features[i].properties.name.toUpperCase()
+		var currentData = targetData(Country, Status, Sector)
+		d3.selectAll(".histogram rect").attr("opacity", function(d,i){
+			console.log("country",Country)
+			if (Country.toLowerCase() == dataset[i][0]){
+				console.log(Country, dataset[i][0])
+				return 1
+			}else{
+				return .3
+			}
+		})
+		var filteredData = targetData(Country, "All","All")
+		
+		drawBarGraph(barTally(filteredData))
+		var filteredData = targetData(Country, "All","All")
+		textTally(filteredData)
+		//format country string
+		var countryNameCap =''
+		var Country = Country.toLowerCase().split(' ')
+		for(var c=0; c< Country.length; c++){
+			countryNameCap += Country[c].substring(0,1).toUpperCase() + Country[c].substring(1,Country[c].length) +' ';
+		}
+		d3.selectAll("#vizTitle").html("All "+ countryNameCap)
+		if(Country == "UNITED STATES"){
+			console.log("USA")
+			d3.selectAll("#vizTitle").html("United States: No Visas")
+			d3.selectAll("#vizDetails").html("United States: No Visas")
+		}
 	})
 	})
 }
 
+//draw histogram
+function drawHistogram(dataset, Status){
+console.log("histogram")
+var width = 660;
+var height = 100;
+var heightScale =d3.scale.linear().domain([1,1000]).range([8,height])
+if (Status == "Accepted"){
+	maxColor = "green"
+}else if (Status == "Withdrawn"){
+	maxColor = "orange"
+}else if (Status == "Denied"){
+	maxColor = "red"
+}else if (Status == "All"){
+	maxColor = "black"
+}
+var histogramSVG = d3.select("div.histogram")
+.append("svg:svg")
+.attr("class", "histogram")
+.attr("width", width)
+.attr("height", height)
+.append("svg:g");
 
+function sortByValue(a,b){
+return a[1]-b[1];
+}
+dataset.sort(sortByValue)
+dataset.reverse();
+//console.log("before x")
+//console.log("sorted", dataset)
+//console.log(dataset.length)
+d3.json("world.geojson", function(json){
+	var mapValues = []
+	for(var i = 0; i < dataset.length; i++){
+		var dataCountry = dataset[i][0].toLowerCase();
+		var dataValue = dataset[i][1];
+		mapValues.push(dataValue);
+		for(var j = 0; j < json.features.length; j++){
+			var jsonCountry = json.features[j].properties.name.toLowerCase();
+			if(dataCountry == jsonCountry){
+				json.features[j].properties.value = dataValue;
+				break;
+			}
+		}
+	}
+	var color = d3.scale.sqrt().range(["#fff", maxColor])	
+		color.domain([0,d3.max(mapValues)])
 
+histogramSVG.selectAll("rect")
+	.data(dataset)
+	.enter()
+	.append("svg:rect")
+	.attr("x", function(d,i){
+	return i*(width/dataset.length)
+	})
+	.attr("y", function(d,i){
+	return height- heightScale(dataset[i][1])
+	})
+	.attr("width",function(d,i){
+	return (width/dataset.length)
+	})
+	.attr("height", function(d,i){
+	return heightScale(dataset[i][1])
+	})
+	.attr("fill", maxColor)
+	.attr("opacity", .3);
+	
+histogramSVG.selectAll(".histogram rect").attr("class", "histunclicked");	
+histogramSVG.selectAll("rect").on("mouseover", function(d,i){
+		var currentColor = this.style["fill"]
+		d3.select(this).transition().attr("opacity", 1)
 
+	})
+	.on("mouseout", function(){
+		var currentColor = this.style["fill"]
+		d3.selectAll(".histunclicked").transition().attr("opacity", .3)
+		d3.selectAll(".histclicked").transition().attr("opacity", 1)
+		
+	})
+	.on("click", function(d,i){
+		histogramSVG.selectAll(".histogram rect").attr("class", "histunclicked");	
+		d3.select(this).attr("class","hisclicked")
+		
+		d3.selectAll(".histunclicked").transition().attr("opacity", .3)
+		d3.selectAll(".histclicked").transition().attr("opacity", 1)
+		
+		//take away graph
+		d3.selectAll(".barchart svg").remove()
+		d3.selectAll(".stackedBarGraph rect").remove()
+		d3.selectAll(".stackedBarGraph text").remove()
+		console.log("dataset",dataset[i])
+		
+		//redraw graph
+		var Status = "All"
+		var Sector = "All"
+		var Country = dataset[i][0]
+		var currentData = targetData(Country, Status, Sector)		
+		drawBarGraph(barTally(targetData(Country, "All", "All")))
+		var countryNameCap =''
+		var Country = Country.toLowerCase().split(' ')
+		for(var c=0; c< Country.length; c++){
+			countryNameCap += Country[c].substring(0,1).toUpperCase() + Country[c].substring(1,Country[c].length) +' ';
+		}
+		d3.selectAll("#vizTitle").html("All "+ countryNameCap)
+		textTally(currentData)
+	})
+	})
+}
 
 
 //ESSAY BOX DO NOT CHANGE
