@@ -213,10 +213,10 @@ function textTally(targetCountryStatusSector){
     var totalVisas = targetCountryStatusSector.length;
     console.log("Number of Visas:", totalVisas);
     console.log("Job Diversity: ", totalJobsDiversity);
-    var countryDiversity = 	mapTally(targetCountryStatusSector).length;
 
+    var countryDiversity = 	mapTally(targetCountryStatusSector).length;
     var statusPercentages = tallyStatus(targetCountryStatusSector);
-    console.log('status percent ' + statusPercentages.length);
+
     if(statusPercentages.length == 2){
         statusPercentages = ""
     } else {
